@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#690005",
+            "primary-fixed-dim": "#e9b3ff",
+            "error-container": "#93000a",
+            "on-primary": "#510074",
+            "surface-variant": "#353534",
+            "tertiary": "#ffb2b7",
+            "outline": "#9b8c9e",
+            "secondary": "#aac7ff",
+            "on-secondary-fixed": "#001b3e",
+            "inverse-primary": "#9026c3",
+            "on-surface-variant": "#d2c1d4",
+            "on-secondary-container": "#002957",
+            "on-tertiary": "#67001c",
+            "primary-fixed": "#f6d9ff",
+            "on-surface": "#e5e2e1",
+            "surface-tint": "#e9b3ff",
+            "on-error-container": "#ffdad6",
+            "tertiary-container": "#ff506c",
+            "on-primary-fixed": "#310048",
+            "inverse-on-surface": "#313030",
+            "secondary-fixed-dim": "#aac7ff",
+            "surface-container-highest": "#353534",
+            "on-secondary-fixed-variant": "#00468d",
+            "surface-bright": "#393939",
+            "on-tertiary-fixed": "#40000e",
+            "primary": "#e9b3ff",
+            "secondary-fixed": "#d6e3ff",
+            "secondary-container": "#3e90ff",
+            "on-secondary": "#003064",
+            "surface-dim": "#131313",
+            "surface": "#131313",
+            "surface-container": "#201f1f",
+            "on-primary-fixed-variant": "#7200a3",
+            "on-tertiary-container": "#5b0017",
+            "on-primary-container": "#460066",
+            "on-background": "#e5e2e1",
+            "error": "#ffb4ab",
+            "background": "#131313",
+            "surface-container-low": "#1c1b1b",
+            "on-tertiary-fixed-variant": "#91002b",
+            "surface-container-lowest": "#0e0e0e",
+            "primary-container": "#c863fb",
+            "inverse-surface": "#e5e2e1",
+            "tertiary-fixed": "#ffdadb",
+            "outline-variant": "#4f4352",
+            "surface-container-high": "#2a2a2a",
+            "tertiary-fixed-dim": "#ffb2b7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "xl": "64px",
+            "md": "24px",
+            "lg": "40px",
+            "xs": "4px",
+            "container-max": "1280px",
+            "gutter": "20px",
+            "base": "8px",
+            "sm": "12px"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "h1": ["Inter"],
+            "h2": ["Inter"],
+            "label-caps": ["Space Grotesk"],
+            "h3": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+            "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+            "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .hyper-flow {
+      background: linear-gradient(135deg, #e9b3ff 0%, #c863fb 50%, #9026c3 100%);
+    }
+    .neon-cyan-glow {
+      box-shadow: 0 0 15px rgba(170, 199, 255, 0.4);
+    }
+    .light-leak-primary {
+      filter: blur(80px);
+      background: radial-gradient(circle, rgba(233, 179, 255, 0.15) 0%, transparent 70%);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant backdrop-blur-xl bg-surface/80 flex flex-col py-lg px-md z-50">
+<div class="mb-xl px-sm">
+<h1 class="font-h2 text-h2 font-extrabold text-primary tracking-tighter">Spark Social</h1>
+<p class="font-label-caps text-on-surface-variant mt-xs">Digital Vitality</p>
+</div>
+<nav class="flex-1 space-y-sm">
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-body-md">Feed</span>
+</a>
+<!-- Active Tab: Events -->
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg p-md transition-all duration-300 shadow-[0_0_15px_rgba(233,179,255,0.3)] active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-body-md">Events</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-body-md">Chat</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md">Members</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="font-body-md">Library</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-body-md">Admin</span>
+</a>
+</nav>
+<button class="mt-xl hyper-flow text-on-primary font-bold py-md px-lg rounded-xl shadow-lg active:scale-95 transition-transform">
+      Create Post
+    </button>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] h-20 bg-surface/80 backdrop-blur-md border-b border-outline-variant z-40 flex justify-between items-center px-xl">
+<div class="flex items-center gap-md bg-surface-container-low px-md py-sm rounded-full border border-outline-variant focus-within:ring-2 focus-within:ring-secondary">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant/50 w-64" placeholder="Search events..." type="text"/>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Current User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a person with warm lighting and a soft bokeh background. The subject is wearing a modern dark suit, and the overall aesthetic is high-end and digital-first, matching a sophisticated social platform interface. The lighting is crisp with slight magenta highlights to align with the brand's neon theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEMi56G6FwBX52LSrbPQqgNNcqTowG4AU9z2RddLqB3HW8E6ivrFply0E7etlpMuOkWJ1gg6lMcd87Mr9oHDanJUFYsjexfQBtTJHdvVXP9WmoH9PxWhj0601ovbu3E9mBz5r0vjJYynDMphrGwDetWxb8hgyqkYPBiICZeiSp0MWp8QPeAXHJfTpwF7LfCoWiRL0GGbrCB_YoQeX-SrhmdeFOZiydPAmyTkZuSomhUnupyviHf_UqOjqkcLOIPDI_xGRUXWI4wQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 min-h-screen relative overflow-hidden">
+<!-- Background Light Leaks -->
+<div class="absolute top-0 right-0 w-[600px] h-[600px] light-leak-primary -z-10"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] light-leak-primary -z-10 opacity-50"></div>
+<div class="p-xl max-w-container-max mx-auto space-y-xl">
+<!-- Live Now Featured Stream Section (Hero Bento) -->
+<section class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-8 glass-card rounded-xl overflow-hidden group">
+<div class="relative aspect-video">
+<img alt="Live Stream Hero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-energy live music production studio with glowing neon cyan and hot pink LED strips illuminating synthesizers and mixing consoles. A performer's silhouette is visible in a haze of purple light. The atmosphere is electric and immersive, representing a digital vitality aesthetic with high contrast and sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhC4yJRLuQaQMZn_ooY8tFDxRdWLd21lxBvHgsHVQSgN8Lk5K63ssW7QCDwrVerwa8gBVs64AM1yR4x5uaqDEXhH4wIXJZ-XABd7SKzH2sPK-kjKHSYDkNH5L0JabNYv7qQe4JbWiGMaXxnaGIgVmbVWyAmtgELn-TZJUI3qtqqKrywLGqGdVpzV-R_IJk0uMzFcamrWwfi9fCLYrXUvAQcwqBvM5r5a7hM5FEbtXnHWUUDeiHu1wKbpag0W3IQzwOcz6nbAbafw"/>
+<div class="absolute top-md left-md flex gap-sm">
+<span class="bg-error text-on-error px-sm py-xs rounded-full font-label-caps flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="circle" data-weight="fill">circle</span>
+                LIVE NOW
+              </span>
+<span class="bg-black/60 backdrop-blur-md text-white px-sm py-xs rounded-full font-label-caps">
+                1.2k VIEWERS
+              </span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-md left-md right-md">
+<h2 class="font-h1 text-h1 text-white mb-sm">Neo-Synth Workshop: Volume II</h2>
+<p class="text-on-surface-variant font-body-lg max-w-2xl">Join Master Jaxx for a deep dive into generative audio synthesis and live looping architectures.</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<div class="glass-card rounded-xl p-md h-full flex flex-col justify-between border-primary/20">
+<div>
+<span class="font-label-caps text-primary mb-sm block">TRENDING TOPIC</span>
+<h3 class="font-h3 text-h3 mb-md">Future of Digital Connectivity</h3>
+<div class="flex -space-x-2 mb-md">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-primary/20 flex items-center justify-center text-[10px]">+42</div>
+<img alt="Avatar" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Close up of a vibrant woman smiling, neon lighting reflecting off her face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3pwIEzq5PtD_gwyk1ZH_oCVNWPGJla9m2j396JPwTrL5TbI3zbkGTaW0ds7l_nz1C11hVOyFr-CIj0ojEbf-v0jU5YNaR3SsZa3YZX1l12GYufkNy7htW2K4S7ukxmXDPa-PAL-5rVRefiBsbvrMoCDkAktMxe54rxkaVsHcTVzn_rFKlr7mYF5JbLqT625zQuZarNgPta8fn4pBIaeTF3n15TG1ZGT96dtfwFSnMvuGSHtz3oAnq1_Lj5fkm29DSijWz99-rdw"/>
+<img alt="Avatar" class="w-8 h-8 rounded-full border-2 border-surface" data-alt="Portrait of a young man in a dark techwear outfit with purple ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnooYS1M9Bjm--kpqRSdmuFZhUQyv__K_8RYyhTDeNxMXWi2lfGbH57nlJxgBjK1mkXzJkPOZy5mRSwclaAE7QMfuE0N6uYRCz0aYIFBQk0MKnA4fl6fNsgGtL9Gknogs4ZzcMULKOIlrsKMbaPQ1KJrg4BzQQTE_zDKZnhK9dmKC7uh0zqrgo0NnjgpFGzCOQAzYhh3ViOqbjdhQDpkuzUOYAw8kJVlxLbMcBf1dT3lvuToQdoGitBhlRZVxGXsjgDej7R9wISg"/>
+</div>
+</div>
+<button class="w-full border border-secondary text-secondary py-sm rounded-lg hover:bg-secondary/10 transition-colors flex items-center justify-center gap-sm font-bold">
+              Join Conversation <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Events Grid (Bento Style) -->
+<section>
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-h2 text-h2 text-primary">Upcoming Syncs</h2>
+<p class="text-on-surface-variant">Curated workshops and meetups for the Spark community.</p>
+</div>
+<div class="flex gap-sm">
+<button class="p-sm glass-card rounded-lg hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="p-sm glass-card rounded-lg hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Event Card 1 -->
+<div class="glass-card rounded-xl p-md flex flex-col gap-md group hover:border-primary/50 transition-all duration-300">
+<div class="relative rounded-lg overflow-hidden h-48">
+<img alt="Event 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A modern minimalist conference hall with holographic displays and violet atmospheric lighting. People are gathered in small clusters discussing technology. The setting is clean, futuristic, and sophisticated, dominated by dark tones and vibrant neon accents consistent with a high-energy social ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIFl5_bFD5h-4Ry4fuJK9EN_xZOw1Rgiekk8BSMiDUBXSYBhLuD0O2_noP2a_2T0HuDDuvQvplgNcGdurD1OVi18t78SA6fci22sMlfngnQgMHHxMP9SDN__DUVA6HhKKLTMW5bLLSflAVZ4R6DAnk6OCtrcT487riuH7vP0GR9rPMSz8P4fDxC_3pIpQrCHmtFuagoCAF2J6KbtwhvHCCsNyQ8M8T-nD8VSczl6Dd4JAqDu5rSgISp3gzxk_7v5xuPeJRI7Piuw"/>
+<div class="absolute top-sm right-sm glass-card bg-black/40 px-sm py-xs rounded-lg text-white font-label-caps">
+                JUL 24
+              </div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-h3 text-xl font-bold">Web3 Design Sprints</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="verified" data-weight="fill">verified</span>
+</div>
+<div class="space-y-xs mb-md text-on-surface-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="text-sm">Berlin, Digital Hub</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="group">group</span>
+<span class="text-sm">18 / 30 Joined</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-primary font-bold">$12.00</span>
+<button class="bg-primary/10 text-primary px-lg py-sm rounded-lg hover:bg-primary/20 transition-colors font-bold active:scale-95">RSVP Now</button>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="glass-card rounded-xl p-md flex flex-col gap-md group hover:border-primary/50 transition-all duration-300">
+<div class="relative rounded-lg overflow-hidden h-48">
+<img alt="Event 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A futuristic urban lounge at night with glowing blue floor lights and sleek obsidian furniture. Outside the floor-to-ceiling windows, a cyberpunk city skyline glitter with lights. The mood is intimate yet high-tech, perfect for an underground networking event. The lighting features sharp contrasts of teal and magenta." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSCTbrsloO0A2NPSNSyKKhzdprE6KnQpL-dp1VUr0v6Hnu_eneym5rP0K4KgWiL3nCrduskfjYpl8xgwkUQrJDp516rilqefrvlwnum-YnzsFugSNftTSDpYZ3pA1SCF7GzIMhg0o_yAs5rX0YGzVmN316ofvrDFOp68wrcKRRbH9LurYAba0EUgBQPbNpn_v1y1Z9kVTXlRXcIjZ_9a5SOhkKy70ynKerve7bucES6JM2UIcwHEzzv114n3cxnY-R-4kr5nMgeQ"/>
+<div class="absolute top-sm right-sm glass-card bg-black/40 px-sm py-xs rounded-lg text-white font-label-caps">
+                JUL 28
+              </div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-h3 text-xl font-bold">After-Hours Networking</h4>
+<span class="material-symbols-outlined text-tertiary" data-icon="bolt" data-weight="fill">bolt</span>
+</div>
+<div class="space-y-xs mb-md text-on-surface-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="text-sm">Virtual Space V3</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="group">group</span>
+<span class="text-sm">Full Capacity</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-on-surface-variant font-bold line-through">$25.00</span>
+<button class="bg-surface-variant text-on-surface-variant px-lg py-sm rounded-lg cursor-not-allowed font-bold">Waitlist</button>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="glass-card rounded-xl p-md flex flex-col gap-md group hover:border-primary/50 transition-all duration-300">
+<div class="relative rounded-lg overflow-hidden h-48">
+<img alt="Event 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A modern collaborative workspace filled with glowing screens and whiteboard walls covered in neon-colored diagrams. The room is bustling with creative energy under soft, dim ambient lighting that emphasizes the bright glowing screens. The style is professional yet electric, emphasizing digital connectivity and innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMJLfOTYF9L1EQ_0YysbOOO1vWtJmlJa06ZsTAsMJrijPhDxe-pVWKn0pgdXzL3fUjH7nErTzKv-ygFe47EqBiQ6tDtOA7ZukZ9bEPgwtpTuMirlVPx_rIYSA_snwQEplhwiAeOJB5GTN7mnxj_lxd49olON_rqmEgs2Lpc2yUS3-nvyI8ZEek4evBnT-68jK2riXD4kEHhU3wvyCCysH72lreUF0kFczA7Dszds8SZFY0FKfWuLsjBzXIdXfNfh89IgrGF-7s4Q"/>
+<div class="absolute top-sm right-sm glass-card bg-black/40 px-sm py-xs rounded-lg text-white font-label-caps">
+                AUG 02
+              </div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-h3 text-xl font-bold">AI Ethics Roundtable</h4>
+<span class="material-symbols-outlined text-primary" data-icon="psychology" data-weight="fill">psychology</span>
+</div>
+<div class="space-y-xs mb-md text-on-surface-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="text-sm">San Francisco, Lab X</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="group">group</span>
+<span class="text-sm">5 Slots Left</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="text-primary font-bold">Free</span>
+<button class="bg-primary/10 text-primary px-lg py-sm rounded-lg hover:bg-primary/20 transition-colors font-bold active:scale-95">RSVP Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Bento Section -->
+<section class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl p-lg flex flex-col items-center text-center group cursor-pointer hover:bg-primary/5">
+<div class="w-16 h-16 rounded-full hyper-flow flex items-center justify-center mb-md shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary text-[32px]" data-icon="code">code</span>
+</div>
+<h4 class="font-h3 text-h3 mb-sm">Dev Workshops</h4>
+<p class="text-on-surface-variant text-sm">Level up your technical stack with industry leaders.</p>
+</div>
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl p-lg flex flex-col items-center text-center group cursor-pointer hover:bg-secondary/5">
+<div class="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-md neon-cyan-glow group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary text-[32px]" data-icon="palette">palette</span>
+</div>
+<h4 class="font-h3 text-h3 mb-sm">Creative Jams</h4>
+<p class="text-on-surface-variant text-sm">Collaborative design and art sessions for creators.</p>
+</div>
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl p-lg flex flex-col items-center text-center group cursor-pointer hover:bg-tertiary/5">
+<div class="w-16 h-16 rounded-full bg-tertiary flex items-center justify-center mb-md shadow-[0_0_15px_rgba(255,178,183,0.4)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary text-[32px]" data-icon="diversity_3">diversity_3</span>
+</div>
+<h4 class="font-h3 text-h3 mb-sm">Social Mixers</h4>
+<p class="text-on-surface-variant text-sm">Informal gatherings to expand your local network.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB Overlay Logic -->
+<button class="fixed bottom-xl right-xl w-14 h-14 hyper-flow text-on-primary rounded-full shadow-[0_0_30px_rgba(233,179,255,0.5)] flex items-center justify-center hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

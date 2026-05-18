@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#e9b3ff",
+                    "error-container": "#93000a",
+                    "on-primary": "#510074",
+                    "surface-variant": "#353534",
+                    "tertiary": "#ffb2b7",
+                    "outline": "#9b8c9e",
+                    "secondary": "#aac7ff",
+                    "on-secondary-fixed": "#001b3e",
+                    "inverse-primary": "#9026c3",
+                    "on-surface-variant": "#d2c1d4",
+                    "on-secondary-container": "#002957",
+                    "on-tertiary": "#67001c",
+                    "primary-fixed": "#f6d9ff",
+                    "on-surface": "#e5e2e1",
+                    "surface-tint": "#e9b3ff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#ff506c",
+                    "on-primary-fixed": "#310048",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed-dim": "#aac7ff",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed-variant": "#00468d",
+                    "surface-bright": "#393939",
+                    "on-tertiary-fixed": "#40000e",
+                    "primary": "#e9b3ff",
+                    "secondary-fixed": "#d6e3ff",
+                    "secondary-container": "#3e90ff",
+                    "on-secondary": "#003064",
+                    "surface-dim": "#131313",
+                    "surface": "#131313",
+                    "surface-container": "#201f1f",
+                    "on-primary-fixed-variant": "#7200a3",
+                    "on-tertiary-container": "#5b0017",
+                    "on-primary-container": "#460066",
+                    "on-background": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#91002b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "primary-container": "#c863fb",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-fixed": "#ffdadb",
+                    "outline-variant": "#4f4352",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-fixed-dim": "#ffb2b7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "xs": "4px",
+                    "container-max": "1280px",
+                    "gutter": "20px",
+                    "base": "8px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "h3": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hyper-flow-gradient {
+            background: linear-gradient(135deg, #c863fb 0%, #3e90ff 100%);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(233, 179, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant backdrop-blur-xl bg-surface flex flex-col py-lg px-md z-50">
+<div class="mb-xl">
+<h1 class="font-h2 text-h2 font-extrabold text-primary">Spark Social</h1>
+<p class="font-label-caps text-on-surface-variant tracking-widest mt-xs uppercase">Digital Vitality</p>
+</div>
+<div class="flex flex-col gap-sm flex-1">
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg p-md transition-all duration-300 shadow-[0_0_15px_rgba(233,179,255,0.3)] active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-body-md">Feed</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 p-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-body-md">Events</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 p-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-body-md">Chat</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 p-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md">Members</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 p-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="font-body-md">Library</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 p-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-body-md">Admin</span>
+</a>
+</div>
+<button class="mt-auto hyper-flow-gradient text-on-primary font-bold py-md px-lg rounded-xl flex items-center justify-center gap-sm transition-transform active:scale-95 shadow-lg">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>Create Post</span>
+</button>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] z-40 backdrop-blur-md border-b border-outline-variant bg-surface/80 flex justify-between items-center h-20 px-xl">
+<div class="flex items-center gap-md flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-secondary rounded-full overflow-hidden">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container border-none py-sm pl-xl pr-md text-on-surface focus:ring-0" placeholder="Search Spark Social..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Current User Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a stylish person with a confident expression, set against an urban neon-lit background. The lighting is high-contrast with magenta and cyan highlights, matching the electric spark social digital vitality aesthetic. High quality, cinematic bokeh, 8k resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdsUZK9uJ5RWxJa87ERl3I7Q1Cwd5Q61FoR8Eyq6d7Z2cQJbj_N-Otr38Y_xyLWgKUFCIM4q6XvwFirXbpi2a5ryvrWpjZeJGBKTbJh0-Ze2Fh0nEiz3BpVIV3Bzxyo6RAwBS-Y2oqNddbUTcemMw97uSxn72OlBAvs1He9bHr7OLN1960iQhRsML04QxL14h5e4pOW1OgPk0-VF7kSHvj3icREXmwK2nySPhWIpwokNgDUAn5rlSimZG4BpXbJvEsCCi81_wWIw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 min-h-screen px-xl pb-32">
+<div class="max-w-5xl mx-auto">
+<!-- Back Button -->
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors mb-lg group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="font-label-caps">BACK TO FEED</span>
+</button>
+<!-- Post Detail Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Main Post Content -->
+<article class="col-span-12 lg:col-span-8 glass-card rounded-xl p-md flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="h-12 w-12 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Author Avatar" class="w-full h-full object-cover" data-alt="A portrait of a male creator in a high-tech studio environment with soft purple ambient lighting. The style is modern bento minimalism with a focus on professional digital vitality. The lighting is moody and sophisticated, reflecting a high-energy tech ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8jfSCb7aCCoh0t_LKWNhAAs5Jjpfgy_nI5NLxID39OOUlzeO7kOFmn6A6-hopszX9d1YoRk7yJUF-pzD8LznWLs1Nk2VEmd2a4sriSSc6_O1JJWmCQpHDTV127lishZRTU1y1R1ePvIt8yUj1UlavFT14Ph1RxMLdYxB9W3BW3hjeP8mOUqmkunfrU9kU4kd4XaPMIDY2JP2GZMxa73vqxtfjlUQggibwQS2lyovPJEhT-U9QMldWfTelFilmBNDHIB0ZFofOOA"/>
+</div>
+<div>
+<h4 class="font-h3 text-primary text-body-md font-bold">Marcus Chen</h4>
+<p class="text-on-surface-variant text-xs font-label-caps">PREMIUM MEMBER • 2 HOURS AGO</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<h2 class="font-h2 text-h2 text-on-surface">The future of Kinetic Web Interfaces is finally here.</h2>
+<p class="text-body-lg text-on-surface-variant">
+                        Exploring the boundaries of motion design and glassmorphism. We've been experimenting with neural-driven transitions that react to user scroll speed. The goal is to create a digital environment that feels alive and breathing. Check out the latest prototype screens below!
+                    </p>
+<!-- Post Images -->
+<div class="grid grid-cols-2 gap-sm">
+<div class="rounded-lg overflow-hidden border border-outline-variant h-80 relative group">
+<img alt="Interface Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic abstract 3D render of flowing fluid glass shapes in deep purples and neon blues. The scene is illuminated by soft light leaks and glows, embodying the digital vitality brand. Minimalist bento-box design elements are visible in the composition, suggesting high-end interface aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB36NunPKPK55h6iXa8ernGbQlTbneszIKZhVcwjtNqWQQqVYog-nzpAhRbbvEADhZgIUmT5lJ70mzJEcbrOqo7mAo3NFIDB32uSwAWZ7p20C9V-UepYbqayeJco4FLj_hnlPh4qtpCNiNhlKSFZ_heSnrcAx8C7M805-PbyOau1DyV3LTMfagihnPyY8l5KU6nOG7G5Ai5On284iZQy16qdObyMOf_N2FAk6VeKB1wDzNkz546u_hfoDKqO20me-8ZOlsgxz2ZeQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="rounded-lg overflow-hidden border border-outline-variant h-80 relative group">
+<img alt="Interface Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dynamic glowing lines and particles forming a complex network against a dark matte black background. Electric cyan and hot pink energy paths connect nodes, creating a high-energy kinetic theme. The style is sophisticated, subterranean tech-luxe with intense contrast and physical depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAmoXLze84UT2FdxtlRGrMaQzWz2Y7kbzKnTr3EyarFd7CtKZPQCcsCxGdKFuyI4seKUxGZ7At5p7XrfJey07uw2bhIwQbqmOKuJ8JZAcQ--TohI2LXE_OqNWY_ogB4RsDEVAfqp30QpWDmbyQUG3USV-xPR_Pr-7oI_an6jOgyWXkbJdY-r9uDC9e9s14nPgwMr9X5oWhvfbWi0Qy5TgXl3G-8bamtaB1Xz5M2hAxtviwUse2iDpbVnNx_MNPdRYJoC22vqz4Bw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<!-- Reactions Bar -->
+<div class="flex items-center gap-lg border-t border-outline-variant pt-md mt-md">
+<button class="flex items-center gap-xs text-primary group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-bold">1.2k</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-bold">84</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined">share</span>
+<span class="font-bold">12</span>
+</button>
+<button class="ml-auto text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</article>
+<!-- Sidebar Contextual Info (Bento Style) -->
+<aside class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<!-- Community Card -->
+<div class="glass-card rounded-xl p-md">
+<h5 class="font-label-caps text-on-surface-variant mb-md">POSTED IN</h5>
+<div class="flex items-center gap-md mb-md">
+<div class="h-10 w-10 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary-container shadow-[0_0_15px_rgba(255,80,108,0.3)]">
+<span class="material-symbols-outlined">blur_on</span>
+</div>
+<div>
+<h3 class="font-h3 text-body-md text-on-surface">Kinetic Labs</h3>
+<p class="text-xs text-on-surface-variant">42.8k Sparkers</p>
+</div>
+</div>
+<button class="w-full border border-secondary text-secondary py-sm rounded-lg font-bold hover:bg-secondary/10 transition-colors active:scale-95">
+                            Join Community
+                        </button>
+</div>
+<!-- Trending Topics -->
+<div class="glass-card rounded-xl p-md">
+<h5 class="font-label-caps text-on-surface-variant mb-md">RELATED TOPICS</h5>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-primary/20 text-primary px-sm py-xs rounded-full text-xs font-bold border border-primary/30">#UIUX</span>
+<span class="bg-secondary/20 text-secondary px-sm py-xs rounded-full text-xs font-bold border border-secondary/30">#MotionDesign</span>
+<span class="bg-tertiary/20 text-tertiary px-sm py-xs rounded-full text-xs font-bold border border-tertiary/30">#FutureTech</span>
+</div>
+</div>
+</aside>
+<!-- Comment Section -->
+<section class="col-span-12 lg:col-span-8 flex flex-col gap-lg mt-md">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-on-surface">Comments (84)</h3>
+<div class="flex items-center gap-sm">
+<span class="text-xs text-on-surface-variant font-label-caps uppercase">Sort by:</span>
+<button class="flex items-center gap-xs text-primary font-bold">
+                                Relevant <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Nested Comment Thread -->
+<div class="flex flex-col gap-md">
+<!-- Comment 1 -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center gap-xs">
+<div class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant flex-shrink-0">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Detailed portrait of a female designer in a dark room with neon violet backlight. Her face is softly illuminated by a computer monitor glowing with cybernetic patterns. The aesthetic is electric and sophisticated, fitting for a digital vitality social network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdpwnPXM7nYTxN5JN7dGRmNYcLWFS6cmi4rwlV7AGig2iFz37yQzdBoljSO6HF5cPj9iKFvwo5DZ3nr6q2cLN1THWN6xmQqapS6qmFRxKhacjxpE5SQIpgkpT4WT5VDzdl_ch1uEgKUOW5YKNdRnGaZMkizWFFllDcg5RxdrtSGT7uZXMU3WWJxsE80G5ef5hesfFO8u1Mb1_-m7kisexOWFILlwkMOUnohY_s0eQuLd_r_jvmY90_4a-utYdC9V9e6h0vcr6oTA"/>
+</div>
+<div class="w-px flex-1 bg-outline-variant group-last:hidden"></div>
+</div>
+<div class="flex-1 pb-md">
+<div class="glass-card p-md rounded-xl">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-sm">
+<span class="font-bold text-on-surface">Elena Vance</span>
+<span class="text-xs text-on-surface-variant font-label-caps uppercase">1 hour ago</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-sm">flag</span>
+</button>
+</div>
+<p class="text-on-surface-variant mb-md">This is exactly what I've been looking for. The way the glass panels react to the cursor hover is just chef's kiss. Are you planning to release the source code for the animation library?</p>
+<div class="flex items-center gap-lg">
+<button class="flex items-center gap-xs text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span> 142
+                                        </button>
+<button class="flex items-center gap-xs text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+                                            Reply
+                                        </button>
+</div>
+</div>
+<!-- Reply Level 1 -->
+<div class="mt-md flex gap-md">
+<div class="flex flex-col items-center gap-xs">
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant flex-shrink-0">
+<img alt="Author Avatar" class="w-full h-full object-cover" data-alt="Close up of a creator speaking with cinematic lighting. The room is dark with a purple gradient blur effect behind him, symbolizing digital depth and glassmorphism. High energy and vibrant professional feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMsQ29deMHsayPgchMoNAUP-0VxrQ9KUneK0JhKMDKB7WLOBFf6dyAchcOzGJNmGZrBOUFf34AGJMF6xYqql2TgmHa9L7_LaOqV_YylKT1Wc83iPp1ZbphA0FTO8DBTauMS8HIwsOFJ7f5nqKpI_cgur08izxcJ2_-CK45hSHgjmE_ucywEQ0sXjxU4nz4BCI0nd5VjEz8Le5DxrcDOCVKgiL6dFR9LSYV-aZCJIvc7tnkDMf2-yxG_uQ-VS_HyOsaEc4qrKS8fg"/>
+</div>
+<div class="w-px flex-1 bg-outline-variant"></div>
+</div>
+<div class="flex-1">
+<div class="glass-card p-md rounded-xl border-primary/20">
+<div class="flex items-center gap-sm mb-sm">
+<span class="font-bold text-primary">Marcus Chen</span>
+<span class="bg-primary/20 text-primary text-[10px] px-xs py-[2px] rounded uppercase font-bold">Author</span>
+<span class="text-xs text-on-surface-variant font-label-caps uppercase">45 mins ago</span>
+</div>
+<p class="text-on-surface-variant mb-md">Glad you like it, Elena! We're planning an open-source release early next month. Just cleaning up some of the kinetic physics logic first.</p>
+<div class="flex items-center gap-lg">
+<button class="flex items-center gap-xs text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span> 28
+                                                </button>
+<button class="flex items-center gap-xs text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+                                                    Reply
+                                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment 2 -->
+<div class="flex gap-md group">
+<div class="flex flex-col items-center gap-xs">
+<div class="h-10 w-10 rounded-full overflow-hidden border border-outline-variant flex-shrink-0">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Portrait of a young woman with a creative professional look, standing in a dark room illuminated by neon pink and cyan lights reflecting off her glasses. The scene represents digital vitality and high-energy social connection in a modern subterranean tech setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdjfPygm2fsmANvfzpsmLkh6pN4eDT7W5RuA-3SB2ezzxd87etx-60VyaviDjTP6VVDhO_3Ac6-eFxM-YxQEwGnP2KEXgDECpQAGqOoZ3sR4ds0QgWX-Zt5fJDnUG5aabNctPevbfEDAosqcGGx7-HeVGSIBGsZf8OyOztohj2UoKkYMKONoUIrSTmwbIwhFaJpTKb7REvVSzQeG-2DmqDXBaXrGleP8hsqsDDL5IeOg8wH0RP4OYiW-DrX2FJ0pkADkn-JnE2YA"/>
+</div>
+<div class="w-px flex-1 bg-outline-variant group-last:hidden"></div>
+</div>
+<div class="flex-1 pb-md">
+<div class="glass-card p-md rounded-xl">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-sm">
+<span class="font-bold text-on-surface">Sarah J.</span>
+<span class="text-xs text-on-surface-variant font-label-caps uppercase">22 mins ago</span>
+</div>
+</div>
+<p class="text-on-surface-variant mb-md">The accessibility on those glass buttons looks a bit low for AA standards, have you tested the contrast ratios on mobile brightness?</p>
+<div class="flex items-center gap-lg">
+<button class="flex items-center gap-xs text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span> 4
+                                        </button>
+<button class="flex items-center gap-xs text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+                                            Reply
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Sticky Comment Input -->
+<div class="fixed bottom-0 right-0 w-[calc(100%-256px)] bg-surface/90 backdrop-blur-xl border-t border-outline-variant px-xl py-md z-50">
+<div class="max-w-5xl mx-auto flex items-center gap-md">
+<div class="h-10 w-10 rounded-full border-2 border-primary overflow-hidden flex-shrink-0">
+<img alt="Current User Avatar" class="w-full h-full object-cover" data-alt="A portrait of a male user with sharp features, lit by electric blue and neon violet lighting. The style is modern bento minimalism with a focus on professional digital vitality. The lighting is moody and sophisticated, reflecting a high-energy tech ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8j62ejDb_fFLTHlnLJ299mfLZLwVGarS0Zd7GXbN6o0xzEyaj86duVhkGLmOfgQbPLk53YxDuE2AIStRpR_rlAbm4kn1MaxH4tJjRlRjgT8z7qQW-H5Y_cKL3nen1htuYeuOgMFBwgv_AwIsshGM5p7S3rUJTWn-_n_AzlcwlrMxOHZSNlB3s7yi0wTu-w7bW0BgGE-GJdI1z2got5KaW6h8anOpxRl47XIYQRxXFii4g-hvpvWn6bgzUu7_GCaHxnemxQYGv2w"/>
+</div>
+<div class="flex-1 relative">
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-md pl-md pr-xl text-on-surface focus:ring-2 focus:ring-primary transition-all" placeholder="Add a comment as Current User..." type="text"/>
+<div class="absolute right-md top-1/2 -translate-y-1/2 flex items-center gap-sm">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">image</span>
+</button>
+</div>
+</div>
+<button class="hyper-flow-gradient text-on-primary font-bold px-lg py-md rounded-xl neon-glow-primary active:scale-95 transition-transform">
+                Send
+            </button>
+</div>
+</div>
+</body></html>

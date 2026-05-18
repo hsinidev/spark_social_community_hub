@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Spark Social Knowledge Base</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#e9b3ff",
+                    "error-container": "#93000a",
+                    "on-primary": "#510074",
+                    "surface-variant": "#353534",
+                    "tertiary": "#ffb2b7",
+                    "outline": "#9b8c9e",
+                    "secondary": "#aac7ff",
+                    "on-secondary-fixed": "#001b3e",
+                    "inverse-primary": "#9026c3",
+                    "on-surface-variant": "#d2c1d4",
+                    "on-secondary-container": "#002957",
+                    "on-tertiary": "#67001c",
+                    "primary-fixed": "#f6d9ff",
+                    "on-surface": "#e5e2e1",
+                    "surface-tint": "#e9b3ff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#ff506c",
+                    "on-primary-fixed": "#310048",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed-dim": "#aac7ff",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed-variant": "#00468d",
+                    "surface-bright": "#393939",
+                    "on-tertiary-fixed": "#40000e",
+                    "primary": "#e9b3ff",
+                    "secondary-fixed": "#d6e3ff",
+                    "secondary-container": "#3e90ff",
+                    "on-secondary": "#003064",
+                    "surface-dim": "#131313",
+                    "surface": "#131313",
+                    "surface-container": "#201f1f",
+                    "on-primary-fixed-variant": "#7200a3",
+                    "on-tertiary-container": "#5b0017",
+                    "on-primary-container": "#460066",
+                    "on-background": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#91002b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "primary-container": "#c863fb",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-fixed": "#ffdadb",
+                    "outline-variant": "#4f4352",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-fixed-dim": "#ffb2b7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "xs": "4px",
+                    "container-max": "1280px",
+                    "gutter": "20px",
+                    "base": "8px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "h3": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hyper-flow {
+            background: linear-gradient(135deg, #e9b3ff 0%, #c863fb 100%);
+        }
+        .neon-border-cyan {
+            border: 1px solid #aac7ff;
+            box-shadow: 0 0 10px rgba(170, 199, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant backdrop-blur-xl bg-surface flex flex-col py-lg px-md z-50">
+<div class="mb-xl px-sm">
+<h2 class="font-h2 text-h2 font-extrabold text-primary leading-none">Spark Social</h2>
+<p class="text-label-caps font-label-caps text-on-surface-variant mt-xs">Digital Vitality</p>
+</div>
+<nav class="flex-grow space-y-base">
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-body-md">Feed</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="font-body-md">Events</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-body-md">Chat</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md">Members</span>
+</a>
+<!-- Active Navigation for Library -->
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg p-md transition-all duration-300 shadow-[0_0_15px_rgba(233,179,255,0.3)]" href="#">
+<span class="material-symbols-outlined">local_library</span>
+<span class="font-body-md">Library</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-body-md">Admin</span>
+</a>
+</nav>
+<button class="mt-auto hyper-flow text-on-primary font-bold py-md px-lg rounded-xl transition-transform active:scale-95 shadow-[0_0_20px_rgba(200,99,251,0.4)]">
+            Create Post
+        </button>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] z-40 backdrop-blur-md border-b border-outline-variant bg-surface/80 flex justify-between items-center h-20 px-xl">
+<div class="flex items-center bg-surface-container-low rounded-full px-md py-sm w-96 border border-outline-variant focus-within:ring-2 focus-within:ring-secondary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full font-body-md placeholder:text-outline" placeholder="Search documentation..." type="text"/>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Current User Avatar" class="w-full h-full object-cover" data-alt="A professional close-up headshot of a diverse user with a warm smile, set against a blurred neon-lit background with purple and cyan bokeh. The lighting is crisp and modern, matching a dark-mode UI aesthetic with high-energy digital accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRILjLCJFeDgECOI9n_jswhwnCarXZDl9w3Exgx423MGF-2PGK9POQ7z9pFRPGDyeRCUHR7uxgiPhgMpFlsOarVJQWB7v4Lbe_4DXLSbV3oVPpwIVzC4pyaSA7uzZNcLj92UH8sZEI7xGMAsxGlnn5UuON16QwAug9mmNVtMvP9ohawMczSJSfr--MO3vh6ZV__tAPDRVj4hPwXjyM8hiF36HTtFQG3YdRM3FVTqhsJO1M8ecCqoJr4GdZPGD0tCNbpJ8r0q_rHw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 min-h-screen p-xl">
+<!-- Hero Section -->
+<section class="grid grid-cols-12 gap-gutter mb-xl">
+<div class="col-span-12 md:col-span-8 glass-card rounded-xl p-xl flex flex-col justify-center relative overflow-hidden group">
+<!-- Decorative Light Leak -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-colors"></div>
+<h1 class="font-h1 text-h1 text-on-surface mb-md">How can we <span class="text-primary">ignite</span> your knowledge?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-lg">Access our complete ecosystem of documentation, brand assets, and technical guides designed for digital vitality.</p>
+<div class="flex gap-md">
+<button class="hyper-flow text-on-primary font-bold px-xl py-md rounded-lg transition-all hover:scale-105">View Quick Start</button>
+<button class="border border-secondary text-secondary font-bold px-xl py-md rounded-lg transition-all hover:bg-secondary/10">Browse API</button>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl overflow-hidden relative border-secondary/20">
+<img alt="Digital Vitality Abstract" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="A complex, high-energy abstract digital artwork featuring fluid neon pink and electric blue ribbons intertwining in a dark matte space. Prismatic light leaks and glowing particles suggest movement and connectivity, embodying the 'Digital Vitality' brand aesthetic with professional cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHWSTOUx_jFJ3NNy6WuWAU-aEBoG8hrbAs3b7ug_YHlaFO_4gCIriVzCR9sL9unrqXNyzZY7hFGE92QmRTc1JhbVTsjVi5Zj2aiIrYGExJbEaXZcX51or98taI8_rkzlm3TxQssoPdeS3VXI0RL2T43JSBnw3RAa4Dy6tFUJU6jnV18f_osb1IgTn9J5w4TWcRfHXghuCpxaXC0wkT5R9EBM63LQnF5ZXWJGx9rCiWC3fa3OzebJbWUHzm68Wt6fM-Z97REwq4-w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent flex items-end p-lg">
+<span class="text-label-caps font-label-caps text-secondary">UPDATED: V2.4 RELEASE</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Resource Categories -->
+<section class="grid grid-cols-12 gap-gutter mb-xl">
+<!-- Dev Portal -->
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl p-lg flex flex-col gap-md hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">terminal</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Dev Portal</h3>
+<p class="font-body-md text-on-surface-variant">Technical specs, SDKs, and integration docs for builders.</p>
+</div>
+<div class="mt-auto flex items-center text-primary font-bold gap-xs group-hover:gap-sm transition-all">
+<span>Explore Docs</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Brand Kit -->
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl p-lg flex flex-col gap-md hover:border-secondary/50 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">palette</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Brand Kit</h3>
+<p class="font-body-md text-on-surface-variant">Logos, typography, and motion guidelines for Spark Social.</p>
+</div>
+<div class="mt-auto flex items-center text-secondary font-bold gap-xs group-hover:gap-sm transition-all">
+<span>Download Assets</span>
+<span class="material-symbols-outlined text-sm">download</span>
+</div>
+</div>
+<!-- Community Rules -->
+<div class="col-span-12 md:col-span-4 glass-card rounded-xl p-lg flex flex-col gap-md hover:border-tertiary/50 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">gavel</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs">Code of Conduct</h3>
+<p class="font-body-md text-on-surface-variant">Maintaining a healthy, high-energy environment for all members.</p>
+</div>
+<div class="mt-auto flex items-center text-tertiary font-bold gap-xs group-hover:gap-sm transition-all">
+<span>Read Policy</span>
+<span class="material-symbols-outlined text-sm">policy</span>
+</div>
+</div>
+</section>
+<!-- FAQ Section: Accordion Logic Visualized -->
+<section class="glass-card rounded-xl p-xl mb-xl border-outline-variant/30">
+<div class="mb-lg">
+<h2 class="font-h2 text-h2 text-on-surface">Frequently Asked Questions</h2>
+<p class="text-on-surface-variant font-body-md mt-xs">Quick answers to common inquiries from our community.</p>
+</div>
+<div class="space-y-md">
+<!-- FAQ Item 1 -->
+<div class="border-b border-outline-variant/30 pb-md">
+<button class="w-full flex justify-between items-center text-left py-sm group">
+<span class="font-h3 text-on-surface group-hover:text-primary transition-colors">How do I verify my Spark Social identity?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform">expand_more</span>
+</button>
+<div class="mt-sm text-on-surface-variant font-body-md pr-xl hidden">
+                        Identity verification is handled through our decentralized 'Vitality' protocol. Visit your Profile Settings and select 'Verify Account' to begin the biometric sync or wallet connection process.
+                    </div>
+</div>
+<!-- FAQ Item 2 (Active/Expanded State) -->
+<div class="border-b border-outline-variant/30 pb-md">
+<button class="w-full flex justify-between items-center text-left py-sm group">
+<span class="font-h3 text-primary">What are 'Energy Drops' and how do I earn them?</span>
+<span class="material-symbols-outlined text-primary rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="mt-sm text-on-surface-variant font-body-md pr-xl border-l-2 border-primary pl-md py-xs bg-primary-container/5">
+                        Energy Drops are our native vitality tokens awarded for high-impact community engagement. You earn them by hosting successful events, contributing verified documentation, or maintaining a 30-day interaction streak. These drops can be used for exclusive profile themes or limited-edition digital wearables.
+                    </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border-b border-outline-variant/30 pb-md">
+<button class="w-full flex justify-between items-center text-left py-sm group">
+<span class="font-h3 text-on-surface group-hover:text-primary transition-colors">Can I bridge my existing social graphs?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform">expand_more</span>
+</button>
+<div class="mt-sm text-on-surface-variant font-body-md pr-xl hidden">
+                        Yes, Spark Social supports open bridging protocols for major decentralized networks. Check the Dev Portal for specific API keys and bridge adapters.
+                    </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="pb-md">
+<button class="w-full flex justify-between items-center text-left py-sm group">
+<span class="font-h3 text-on-surface group-hover:text-primary transition-colors">Is there a mobile app available?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Connectivity Visualization (Footer Style) -->
+<section class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-6 glass-card rounded-xl p-lg flex items-center justify-between group overflow-hidden">
+<div class="relative z-10">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-xs">STILL NEED HELP?</p>
+<h3 class="font-h3 text-h3 text-on-surface">Talk to a Human</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Our support team is active 24/7 in the Vitality Hub.</p>
+<button class="neon-border-cyan text-secondary font-bold px-lg py-sm rounded-lg hover:bg-secondary/20 transition-all">Join Discord</button>
+</div>
+<div class="w-32 h-32 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-secondary" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 glass-card rounded-xl p-lg flex items-center justify-between group overflow-hidden">
+<div class="relative z-10">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-xs">FEEDBACK LOOP</p>
+<h3 class="font-h3 text-h3 text-on-surface">Suggest a Feature</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Help us evolve the Spark Social experience.</p>
+<button class="neon-border-cyan text-primary font-bold px-lg py-sm rounded-lg hover:bg-primary/20 transition-all">Submit Idea</button>
+</div>
+<div class="w-32 h-32 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual FAB -->
+<button class="fixed bottom-xl right-xl h-16 w-16 hyper-flow text-on-primary rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(200,99,251,0.6)] hover:scale-110 transition-transform active:scale-95 z-50">
+<span class="material-symbols-outlined text-4xl">add</span>
+</button>
+</body></html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#e9b3ff",
+                    "error-container": "#93000a",
+                    "on-primary": "#510074",
+                    "surface-variant": "#353534",
+                    "tertiary": "#ffb2b7",
+                    "outline": "#9b8c9e",
+                    "secondary": "#aac7ff",
+                    "on-secondary-fixed": "#001b3e",
+                    "inverse-primary": "#9026c3",
+                    "on-surface-variant": "#d2c1d4",
+                    "on-secondary-container": "#002957",
+                    "on-tertiary": "#67001c",
+                    "primary-fixed": "#f6d9ff",
+                    "on-surface": "#e5e2e1",
+                    "surface-tint": "#e9b3ff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#ff506c",
+                    "on-primary-fixed": "#310048",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed-dim": "#aac7ff",
+                    "surface-container-highest": "#353534",
+                    "on-secondary-fixed-variant": "#00468d",
+                    "surface-bright": "#393939",
+                    "on-tertiary-fixed": "#40000e",
+                    "primary": "#e9b3ff",
+                    "secondary-fixed": "#d6e3ff",
+                    "secondary-container": "#3e90ff",
+                    "on-secondary": "#003064",
+                    "surface-dim": "#131313",
+                    "surface": "#131313",
+                    "surface-container": "#201f1f",
+                    "on-primary-fixed-variant": "#7200a3",
+                    "on-tertiary-container": "#5b0017",
+                    "on-primary-container": "#460066",
+                    "on-background": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#91002b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "primary-container": "#c863fb",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-fixed": "#ffdadb",
+                    "outline-variant": "#4f4352",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-fixed-dim": "#ffb2b7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "xs": "4px",
+                    "container-max": "1280px",
+                    "gutter": "20px",
+                    "base": "8px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "h3": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .neon-glow-primary {
+        box-shadow: 0 0 15px rgba(233, 179, 255, 0.3);
+      }
+      .hyper-flow-gradient {
+        background: linear-gradient(135deg, #e9b3ff 0%, #c863fb 100%);
+      }
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-outline-variant backdrop-blur-xl bg-surface dark:bg-surface flex flex-col py-lg px-md z-50">
+<div class="mb-xl px-md">
+<h2 class="font-h2 text-h2 font-extrabold text-primary">Spark Social</h2>
+<p class="font-label-caps text-on-surface-variant uppercase tracking-widest mt-xs">Digital Vitality</p>
+</div>
+<nav class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="font-body-md">Feed</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-body-md">Events</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-body-md">Chat</span>
+</a>
+<a class="flex items-center gap-md bg-primary-container text-on-primary-container rounded-lg p-md transition-all duration-300 shadow-[0_0_15px_rgba(233,179,255,0.3)]" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md">Members</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="font-body-md">Library</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:text-primary p-md transition-colors hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-body-md">Admin</span>
+</a>
+</nav>
+<button class="mt-auto hyper-flow-gradient text-on-primary font-bold py-md px-lg rounded-xl flex items-center justify-center gap-sm active:scale-95 transition-transform shadow-[0_0_20px_rgba(200,99,251,0.4)]">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+            Create Post
+        </button>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-256px)] z-40 backdrop-blur-md border-b border-outline-variant bg-surface/80 dark:bg-surface/80 flex justify-between items-center h-20 px-xl">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-secondary rounded-lg">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg py-sm pl-xl pr-md text-on-surface focus:ring-0 placeholder:text-on-surface-variant/50" placeholder="Search the vitality network..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-tertiary-container rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary">
+<img alt="Current User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a modern creative individual with a sharp jawline and confident gaze. The lighting is dramatic and cinematic, with neon purple rim light against a deep matte black background. The style is ultra-high definition digital photography with a moody, high-energy tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvmBJOMkqdiCO1AtZayRIfWWGqVX3sXjZol8ldaSxo94qXpLcpM4MAqT8YbMP76zH3sttJwpLOfz2l-KFXXG2SAJMNGUAYGEkwBStE1WcZyL4NwWH_WNNdMMHXk16wfN24snP2A5P-tksmUrVbwYxQNUDcPlY65mqCEOpdMVHU2dX1i-ciYQ_U4cZoHfBtcS4u0s-4n_9Dd0xFJYR_U-hZ5zTqPBRC8yj76JNnfZg2DRO8IZHAq0Td2fPY_pEY8OFvyhUyUTRNWQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 p-xl min-h-screen">
+<!-- Hero Section: Featured Member -->
+<section class="mb-xl">
+<div class="glass-card rounded-xl overflow-hidden bento-grid p-0 h-[400px]">
+<div class="col-span-7 p-xl flex flex-col justify-center">
+<div class="flex items-center gap-sm mb-md">
+<span class="bg-primary/20 text-primary px-sm py-xs rounded-full font-label-caps border border-primary/30">FEATURED MEMBER</span>
+<span class="bg-secondary/20 text-secondary px-sm py-xs rounded-full font-label-caps border border-secondary/30">TOP EXPERT</span>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface mb-md">Dr. Elena Volt</h1>
+<p class="font-body-lg text-on-surface-variant mb-lg max-w-lg">
+                        Pioneering the intersection of neural networks and human collective behavior. Elena has contributed over 500 vital resources to the Spark Social library this month.
+                    </p>
+<div class="flex gap-md">
+<button class="hyper-flow-gradient text-on-primary font-bold px-xl py-md rounded-lg active:scale-95 transition-transform flex items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                            Message Elena
+                        </button>
+<button class="border border-secondary text-secondary font-bold px-xl py-md rounded-lg hover:bg-secondary/10 transition-all active:scale-95 shadow-[0_0_15px_rgba(170,199,255,0.2)]">
+                            View Profile
+                        </button>
+</div>
+</div>
+<div class="col-span-5 relative">
+<img alt="Featured Member Hero" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A striking portrait of a visionary female scientist with short blonde hair, wearing sleek silver-toned eyewear. She is positioned against a background of complex, glowing fiber-optic cables that emit a soft violet and cyan light. The overall mood is intelligent, futuristic, and highly energized, perfectly aligning with a premium digital social network aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSnwgQcWmuhz3GNjLTwz9-omS_o_bvhr9pVHMotRv0o5HHWor0T5m29iz-vgDlOs24bFaSyBZNdWGapodkx4Jv4b0ccdqj7z7jN7XiJSpC_ldkHmtyUbGLxhQFM9gGCYrntFo80KbA6Be8sv4jrB8KIlJ2Kd9xlavicn_zaS88xcfuvXX1Ig7XsiDdmdOSzt_8b-4AdBv5Qk9WsXXTtbATv_LW0k7gMDtj-EEzhfAPe_91f1X3PpvEc91YCu734OG5klFMuxpGsg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Directory Header & Filters -->
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h3 class="font-h3 text-h3 text-primary mb-xs">Vitality Network</h3>
+<p class="text-on-surface-variant">Discovering 1,248 active members in your circle</p>
+</div>
+<div class="flex gap-sm">
+<button class="glass-card px-md py-sm rounded-lg text-on-surface font-label-caps border border-outline-variant hover:border-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                    FILTERS
+                </button>
+<button class="glass-card px-md py-sm rounded-lg text-on-surface font-label-caps border border-outline-variant hover:border-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="sort">sort</span>
+                    SORT BY
+                </button>
+</div>
+</div>
+<!-- Member Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Member Card 1 -->
+<div class="glass-card rounded-xl p-md flex flex-col group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-md">
+<img alt="Member 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up portrait of a young man with a creative, artistic look. He has dark curly hair and is lit by a soft neon cyan light from the side. The background is a dark, textured matte surface. The image quality is crisp with a shallow depth of field, emphasizing his friendly yet professional expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChMRpJw-PJDWNB0K24z8OC_WUNn6AbjwYBrosHZHQetqMUBZHT8hjNXSemFqRb52epVYsOFCppDygzbou3eb0LEKvMMeB4WptCO66pWxN_GXLnYDVIzAOhPNBzSUpq1ed2lJwaFKLvDgbxb2JM1CKDuYcptv6HDW2BQBKjAjYFzQHEOBU2_Zm-Km9E4JyrEsKvM6cB_irPRNxp3kfD5PWAmSvyA1hU66IddwCcphNP6saPkceJ9MMPyRHC0Wxv6EiMMhfPKCDMHQ"/>
+<div class="absolute top-sm right-sm bg-surface-dim/80 backdrop-blur-md px-sm py-xs rounded-full border border-outline-variant">
+<span class="text-primary text-[10px] font-label-caps">ACTIVE NOW</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex gap-xs mb-xs">
+<span class="text-[10px] font-label-caps bg-tertiary/20 text-tertiary px-xs py-0.5 rounded border border-tertiary/30">LEADERSHIP</span>
+<span class="text-[10px] font-label-caps bg-secondary/20 text-secondary px-xs py-0.5 rounded border border-secondary/30">STRATEGY</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">Marcus Chen</h4>
+<p class="text-on-surface-variant text-sm mb-md">Global Operations Lead</p>
+<div class="flex items-center gap-sm text-on-surface-variant text-xs mb-lg">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Berlin</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="group">group</span> 42 Mutuals</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-bold py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+                    Message
+                </button>
+</div>
+<!-- Member Card 2 -->
+<div class="glass-card rounded-xl p-md flex flex-col group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-md">
+<img alt="Member 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Portrait of a modern woman with vibrant energy, smiling warmly at the camera. She is wearing a minimal black turtleneck. The lighting features a soft pink glow reflecting off her face, suggesting a high-tech studio environment. The aesthetic is clean, professional, and sophisticated, set against a dark grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqKctsMh1JYArLWaIFKnmIYZrb_YYNP1ljO947CF0dEFbclpWpssOF5olrlSuzgd2SLtGjUSB_jNdtIfvfKlJqN4rbMp5yvkIQjAgdel6m6OAk7EXFF9gvtejbqh7ffcRGg2WKDPxY0IK-8ieeivAXSqoJmVNHDvVMi9TEc0Z-yQmxyC8rnRgKqqlAue9MFxw0vOI267n3iDGEned4pm3uJzmsVQxKh1Y-FBKn2Gm-RTVmXgCg9GYTiOgg6puP3fGMcg2_IyBgrQ"/>
+</div>
+<div class="flex-1">
+<div class="flex gap-xs mb-xs">
+<span class="text-[10px] font-label-caps bg-primary/20 text-primary px-xs py-0.5 rounded border border-primary/30">EXPERT</span>
+<span class="text-[10px] font-label-caps bg-secondary/20 text-secondary px-xs py-0.5 rounded border border-secondary/30">DESIGN</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">Sarah Jenkins</h4>
+<p class="text-on-surface-variant text-sm mb-md">Product Designer @ Flux</p>
+<div class="flex items-center gap-sm text-on-surface-variant text-xs mb-lg">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> New York</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="group">group</span> 12 Mutuals</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-bold py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+                    Message
+                </button>
+</div>
+<!-- Member Card 3 -->
+<div class="glass-card rounded-xl p-md flex flex-col group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-md">
+<img alt="Member 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up of a man with a sharp, thoughtful look, sporting a groomed beard. The portrait uses dramatic chiaroscuro lighting, with a single neon blue accent light hitting the side of his head. The mood is deep, intellectual, and intensely modern, matching the premium matte black UI design of the social platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHCaHAVOCSPvmBBwEcU9y3Fj4AaZS_0xyv4AiHYkJTazqoXg2QemG489TrAxWO7CzWW9VQCRWhzO9tjfZ_l7ePRpML-3F3HI8beuyj9h0YnZriwkc3lnfxnvM6UftcWlD7MBj5DsYNvJqvM8hlanSVLn6v9QbVdV8_Mxh7uOuB8xdH4MnqJqlDqxN5AXkaRb_hEThLAml9lscnP7NXsHVVu-Lb7h6qrSGy2BJ1G_gsw1oSM8PQ316x788ikoRwxWiM7rZ1x0tA6g"/>
+</div>
+<div class="flex-1">
+<div class="flex gap-xs mb-xs">
+<span class="text-[10px] font-label-caps bg-tertiary/20 text-tertiary px-xs py-0.5 rounded border border-tertiary/30">CREATOR</span>
+<span class="text-[10px] font-label-caps bg-secondary/20 text-secondary px-xs py-0.5 rounded border border-secondary/30">AI OPS</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">David Rossi</h4>
+<p class="text-on-surface-variant text-sm mb-md">AI Systems Architect</p>
+<div class="flex items-center gap-sm text-on-surface-variant text-xs mb-lg">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Milan</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="group">group</span> 88 Mutuals</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-bold py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+                    Message
+                </button>
+</div>
+<!-- Member Card 4 -->
+<div class="glass-card rounded-xl p-md flex flex-col group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-md">
+<img alt="Member 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Portrait of a fashionable woman with a bold, futuristic style. She is wearing architectural earrings and a sleek metallic jacket. The background is a deep, dark void with subtle hints of floating holographic particles. The lighting is crisp and cool, featuring intense white and pale violet highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0FQ8MMefZhUF8OLbUJ59JWinF7Sn_lTg0HNLrsqX30khQ92p33HQDjGVaUEu4yrfOUWbZa3kcfKU3vpqBuTRYUdZCqENivLgKSERpnA8ozuLwS9i4uabbtXEHaXg-NBLOqqZ9jOwbpUvdV8nkPMYR8RrD9dBfVApDHyRpS60n3Giaiz2BfQy5VEH8GkydhOwGSBj_SOvdrDIdPqxI2_l511IK3YJJcYClWRNmnZY0G_S4O-Eqcwrx6Y261TH3ntIUXqNFvY5V9w"/>
+</div>
+<div class="flex-1">
+<div class="flex gap-xs mb-xs">
+<span class="text-[10px] font-label-caps bg-primary/20 text-primary px-xs py-0.5 rounded border border-primary/30">LEADERSHIP</span>
+<span class="text-[10px] font-label-caps bg-tertiary/20 text-tertiary px-xs py-0.5 rounded border border-tertiary/30">VITALITY</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">Amina Sokoto</h4>
+<p class="text-on-surface-variant text-sm mb-md">Sustainability Director</p>
+<div class="flex items-center gap-sm text-on-surface-variant text-xs mb-lg">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Lagos</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="group">group</span> 156 Mutuals</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-bold py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+                    Message
+                </button>
+</div>
+<!-- Connection Visual Block (Bento-style placeholder) -->
+<div class="glass-card rounded-xl p-xl flex flex-col justify-center items-center text-center border-dashed border-2 border-outline-variant/30 hover:border-primary/30 transition-all">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="person_add">person_add</span>
+</div>
+<h4 class="font-h3 text-body-md font-bold text-on-surface mb-xs">Invite Connections</h4>
+<p class="text-on-surface-variant text-xs mb-lg">Expand your spark network and gain vitality points.</p>
+<button class="text-secondary font-label-caps text-[10px] tracking-widest border-b border-secondary/0 hover:border-secondary transition-all">GENERATE LINK</button>
+</div>
+<!-- Member Card 5 -->
+<div class="glass-card rounded-xl p-md flex flex-col group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-md">
+<img alt="Member 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Studio portrait of a man with a calm, serene expression. He has short hair and a minimal beard. The lighting is warm and organic, contrasting with the dark matte black surroundings. A subtle glow-toggle effect is simulated by a hint of pink light on his shoulder, tying into the Spark Social visual theme of Digital Vitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDHSpFGqIQXdx5369k-STRRnQrqK7Hd_jEaf1KqyJw4Hr9lKRQ7PWwX-9jwjMl6mXVgJPV5e592d63CTw7LNN3fZrHseBROydQMILKMCAMi6UcNrZ2jLTzYKEQPLoUo7m9KPZ1CNEkcPwbYBZpaTlCKlr4rSqTaKb7gyfE-ape1JZc8jexBPXImrzETWhrDlJMZoqevjaWhgOic2t5EeUXzQI54QEv0csrFSsJ6B398Lo-K8ubEwPrEyif5_jKIul7JXT47h0pNQ"/>
+</div>
+<div class="flex-1">
+<div class="flex gap-xs mb-xs">
+<span class="text-[10px] font-label-caps bg-secondary/20 text-secondary px-xs py-0.5 rounded border border-secondary/30">EXPERT</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">Liam O'Connor</h4>
+<p class="text-on-surface-variant text-sm mb-md">Community Growth Manager</p>
+<div class="flex items-center gap-sm text-on-surface-variant text-xs mb-lg">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Dublin</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="group">group</span> 5 Mutuals</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-bold py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+                    Message
+                </button>
+</div>
+<!-- Member Card 6 -->
+<div class="glass-card rounded-xl p-md flex flex-col group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-md">
+<img alt="Member 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up portrait of a woman with an intense and focused gaze, wearing dark-rimmed glasses. The lighting is high-contrast with a cool blue undertone. The composition is tight, creating an intimate yet powerful impression. The image sits within a matte black social directory, emphasizing her status as a top-tier network member." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpRN44K38O3S15WqVFDpEax0LsnT_oQ5TfjBKMMd9VWqWWXxUSU7Hl_T83PxS4P_ed8UhXSWV5-Z-ujbOTsbeWPJplvxjdvNM8O_MT70c25whx223fTODTvc0k0L6qd2TJnEWsblzEryjYSR7CtGtSk5YKT8Pvi8M3ZfakWhkRZCLCB_ny8NM585v4uyZ1jmz1do37rwQatPssyS_MCOJGQjNnhOgvZiU7i5nKemjoZZ4-hG7-yP9ZXtinrLZFhqeEeopmxroEfg"/>
+</div>
+<div class="flex-1">
+<div class="flex gap-xs mb-xs">
+<span class="text-[10px] font-label-caps bg-primary/20 text-primary px-xs py-0.5 rounded border border-primary/30">ADVISOR</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">Yuki Tanaka</h4>
+<p class="text-on-surface-variant text-sm mb-md">Web3 Ecosystem Lead</p>
+<div class="flex items-center gap-sm text-on-surface-variant text-xs mb-lg">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Tokyo</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="group">group</span> 212 Mutuals</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-bold py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+                    Message
+                </button>
+</div>
+<!-- Member Card 7 -->
+<div class="glass-card rounded-xl p-md flex flex-col group hover:border-primary/50 transition-all duration-300">
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-md">
+<img alt="Member 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sharp portrait of a young male professional with a confident smile. He's standing in a modern office with glass walls, reflecting a vibrant purple and cyan city skyline at night. The lighting is cinematic, capturing the essence of high-energy digital vitality in a premium social ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_GSTKDx7gWrr0oh4au8AnmC0trqxkCTz2yUrfkBx3_2KCuQe7PjP5EO7JZckMTQLlgVtH8w7Utf6xs74uiwFcRF8EfwqtgW-E_dCBFV0QJE8G_VtvGqR0NWFJpjcNH5znzzEJsEn-jLxInZq1Dl4yBVO0O5LZe0j0gu6PrVwW67PUQchOHQgWZL4CWy9gaX60YC4C_mdbdUWaUW0ibaoWYHov5WbEiXbSoPXGx3i0aERc3P3RDGNRBGfh4KnXBfxAv_izrlM9FQ"/>
+</div>
+<div class="flex-1">
+<div class="flex gap-xs mb-xs">
+<span class="text-[10px] font-label-caps bg-tertiary/20 text-tertiary px-xs py-0.5 rounded border border-tertiary/30">FOUNDER</span>
+</div>
+<h4 class="font-h3 text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">Jordan Peters</h4>
+<p class="text-on-surface-variant text-sm mb-md">Founder of Spark Lab</p>
+<div class="flex items-center gap-sm text-on-surface-variant text-xs mb-lg">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span> Austin</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]" data-icon="group">group</span> 500+ Mutuals</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant text-on-surface font-bold py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+                    Message
+                </button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-xl flex justify-center items-center gap-md">
+<button class="h-10 w-10 glass-card rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex gap-sm">
+<button class="h-10 w-10 hyper-flow-gradient text-on-primary font-bold rounded-lg flex items-center justify-center shadow-lg">1</button>
+<button class="h-10 w-10 glass-card text-on-surface-variant rounded-lg flex items-center justify-center hover:text-primary transition-colors">2</button>
+<button class="h-10 w-10 glass-card text-on-surface-variant rounded-lg flex items-center justify-center hover:text-primary transition-colors">3</button>
+<span class="text-on-surface-variant flex items-end pb-sm">...</span>
+<button class="h-10 w-10 glass-card text-on-surface-variant rounded-lg flex items-center justify-center hover:text-primary transition-colors">12</button>
+</div>
+<button class="h-10 w-10 glass-card rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+</body></html>

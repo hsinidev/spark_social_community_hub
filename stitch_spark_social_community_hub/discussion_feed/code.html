@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#c863fb",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffb2b7",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-container": "#002957",
+                    "on-secondary-fixed": "#001b3e",
+                    "surface-tint": "#e9b3ff",
+                    "primary-fixed-dim": "#e9b3ff",
+                    "tertiary-fixed-dim": "#ffb2b7",
+                    "on-primary": "#510074",
+                    "primary-fixed": "#f6d9ff",
+                    "on-tertiary-fixed": "#40000e",
+                    "secondary-container": "#3e90ff",
+                    "primary": "#e9b3ff",
+                    "background": "#131313",
+                    "secondary-fixed": "#d6e3ff",
+                    "on-tertiary-container": "#5b0017",
+                    "surface-bright": "#393939",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-container": "#ff506c",
+                    "on-tertiary": "#67001c",
+                    "on-surface-variant": "#d2c1d4",
+                    "on-secondary-fixed-variant": "#00468d",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#aac7ff",
+                    "inverse-primary": "#9026c3",
+                    "secondary": "#aac7ff",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#9b8c9e",
+                    "surface-container": "#201f1f",
+                    "inverse-on-surface": "#313030",
+                    "surface": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "on-secondary": "#003064",
+                    "on-primary-fixed": "#310048",
+                    "surface-dim": "#131313",
+                    "on-primary-fixed-variant": "#7200a3",
+                    "on-tertiary-fixed-variant": "#91002b",
+                    "surface-container-highest": "#353534",
+                    "tertiary-fixed": "#ffdadb",
+                    "surface-variant": "#353534",
+                    "on-primary-container": "#460066",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline-variant": "#4f4352",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "gutter": "20px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "h3": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .hyper-flow {
+        background: linear-gradient(135deg, #c863fb 0%, #3e90ff 100%);
+      }
+      .neon-glow-primary {
+        box-shadow: 0 0 20px rgba(200, 99, 251, 0.3);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-32">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_20px_rgba(200,99,251,0.15)] flex justify-between items-center px-md h-16">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/20">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A high-quality portrait of a stylish user with soft studio lighting against a dark, minimalist background. The aesthetic is clean and modern, consistent with a high-end social platform. The image features subtle purple and blue ambient reflections on the skin to match the brand's electric vitality theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdTFxxFob0zZySo36q37ScL0KSZns0BtoAo-VEv2q8t5r4oG3vbSmWpqDq3AnpO-jAH3PJf9B7p-50P6guDXWxug3tbO5B2-_7wUgK3uEeds_x7AXHnnm2eCyuPyXD371cdOaMkzw5xcglz247uHi1Km862SOYCqDxFq4OzO7GjGXRAzlKgy8V8OGcEs4G2GbNopkeSsuuFYfQ0RNBerXI-mAGAcUdYGYNuF0nAW-8ICmnZ9XtgsaljCAdlX7TjukLv_Jzy-i-MQ"/>
+</div>
+<h1 class="font-h2 text-h2 tracking-tighter text-primary-container">SPARK SOCIAL</h1>
+</div>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 28px;">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-base max-w-container-max mx-auto">
+<!-- Bento Stats Section -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-lg">
+<!-- Active Now -->
+<div class="glass-card rounded-xl p-md flex flex-col justify-between min-h-[140px]">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ACTIVE NOW</span>
+<div class="flex items-end justify-between">
+<span class="font-h1 text-h1 text-primary">1.2k</span>
+<div class="w-2 h-2 rounded-full bg-primary-container neon-glow-primary mb-3"></div>
+</div>
+</div>
+<!-- New Posts -->
+<div class="glass-card rounded-xl p-md flex flex-col justify-between min-h-[140px]">
+<span class="font-label-caps text-label-caps text-on-surface-variant">NEW POSTS</span>
+<div class="flex items-end justify-between">
+<span class="font-h1 text-h1 text-secondary">84</span>
+<span class="material-symbols-outlined text-secondary mb-3" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+</div>
+<!-- Member of the Month -->
+<div class="col-span-2 glass-card rounded-xl p-0 overflow-hidden relative group">
+<div class="absolute inset-0 p-[2px] hyper-flow rounded-xl -z-10"></div>
+<div class="bg-background/90 h-full w-full p-md flex items-center gap-md">
+<div class="relative">
+<div class="w-20 h-20 rounded-full p-1 hyper-flow">
+<img alt="Member of the month" class="w-full h-full object-cover rounded-full border-2 border-background" data-alt="A professional close-up of a smiling woman with vibrant lighting. The background is a soft blur of urban neon lights in shades of magenta and electric blue. The overall mood is energetic and celebratory, reflecting a top-tier community member achievement in a high-tech social environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpW-C4ZMx6lu0XU1_ScvebdNwiwA4lQ2TPPWUZz6i_R1BQMiLM_5Wz81oGULsMhrQF_w8STXs6ylbh537tCB-7GMkt-jFq25IDl44gZnmGyfliLIQ3IMUD-QOf9viuoko0Zc2qoJQFNqmkrn3MDbIn4Yae3mpq9DAfYmdIXxBXHvR_amXRKD9pBd7Mm2PD294VmyuzgTuLU9L9nCGBHUWDN4RvqKcUtENUARBlnRzhWRpO0w505D6W0EMcEKbx9CGZuhaeTXEWfA"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-tertiary-container text-on-tertiary-container rounded-full p-1 shadow-lg">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary-container">MEMBER OF THE MONTH</span>
+<h3 class="font-h3 text-h3 text-on-surface">Alex Rivera</h3>
+<p class="text-on-surface-variant text-sm">Top contributor in 'Tech Future'</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Search & Filter -->
+<div class="flex gap-sm mb-md overflow-x-auto pb-2 no-scrollbar">
+<div class="flex-1 min-w-[200px] relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-black/40 border border-white/10 rounded-xl py-3 pl-12 pr-4 text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="Search discussions..." type="text"/>
+</div>
+<button class="glass-card px-md rounded-xl flex items-center gap-xs text-primary whitespace-nowrap">
+<span class="material-symbols-outlined">tune</span>
+<span class="font-label-caps">FILTERS</span>
+</button>
+</div>
+<!-- Discussion Feed -->
+<div class="space-y-gutter">
+<!-- Feed Item 1 -->
+<article class="glass-card rounded-xl p-md transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="User Avatar" class="w-12 h-12 rounded-xl object-cover border border-white/10" data-alt="Detailed portrait of a young man with a focused expression, set in a dark environment with blue rim lighting. The style is cinematic and high-contrast, fitting the underground aesthetic of a premium digital social network. Vibrant energy is conveyed through sharp focus and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEMPuB91jcWtKzGwsWoq9Ep4HugypUp7ahETY1P6b62z4ZJwwwtUapaxWRfeuMGfYlApB3hyYfIs8DEPxGRZ9lIRJ0-X9Z07nztHefjGZmgXBjbeBFc8MhEKg1IcX-e-H4Q3p_z5HC3sGnPSYPetQvfoAd6ocSFeDA0ilNX9-p51VFkm3FSYhu4C13d5_6MkySOdFayhoghuw24TB77zHjVEkWDjn4uJKCVKkJ-wWPaX2E7V_V3wTR_GYmaCmkn1qsmlAVRNel3Q"/>
+<div>
+<h4 class="font-h3 text-body-lg font-bold">The future of Decentralized AI?</h4>
+<div class="flex items-center gap-xs text-on-surface-variant text-xs">
+<span class="font-bold text-secondary">@marcus_dev</span>
+<span>•</span>
+<span>2h ago</span>
+</div>
+</div>
+</div>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-label-caps">TECH</span>
+</div>
+<p class="text-on-surface-variant mb-md line-clamp-3">
+                    Just saw the new protocol update. The way they're handling node distribution is revolutionary. Does anyone else think this might solve the latency issues we've been seeing in the alpha tests? 🚀
+                </p>
+<div class="flex items-center justify-between pt-md border-t border-white/5">
+<div class="flex gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="text-sm">128</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="text-sm">45</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</article>
+<!-- Feed Item 2 (With Image) -->
+<article class="glass-card rounded-xl p-md transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="User Avatar" class="w-12 h-12 rounded-xl object-cover border border-white/10" data-alt="A side-profile portrait of a woman looking at a screen, illuminated by the screen's cool light. The scene is set in a dark room with a single orange neon light strip in the background, creating a high-energy, futuristic atmosphere that blends glassmorphism and cyberpunk aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp83K_qWA5n3bOYa7SKYJKHPcqWnOZzkRjSh1eD0_VvsPEIyHk2CBnLR4-af1n3EtiZxgK2mM5iamGEhl5jLl8EeOMWONoQFvyw7S26rKs_uV400HDde559OEBXaNrvGBgdFt2R_6kE5yFp_HBQ8JZHr3md4rQVDV8JthijltHhquvrmCkr4gN_vsXEcgmjut9goWxrmFcEQDg2otKgHrhXl3uBPLKwXWjKm3YCVNysChZ0CqPCWk7uC7IfjJYAjorcLcE8ufhew"/>
+<div>
+<h4 class="font-h3 text-body-lg font-bold">Design Sprint: Neon Aesthetics</h4>
+<div class="flex items-center gap-xs text-on-surface-variant text-xs">
+<span class="font-bold text-secondary">@sarah_design</span>
+<span>•</span>
+<span>4h ago</span>
+</div>
+</div>
+</div>
+<span class="bg-tertiary-container/10 text-tertiary-container px-3 py-1 rounded-full text-xs font-label-caps">DESIGN</span>
+</div>
+<div class="w-full h-48 rounded-xl overflow-hidden mb-md border border-white/10">
+<img alt="Feed visual" class="w-full h-full object-cover" data-alt="A wide-angle landscape of a futuristic digital city with towering skyscrapers made of glass and light. The sky is a deep indigo, filled with glowing constellations and data streams. The lighting is dominated by neon cyan and hot pink highlights, creating a sense of digital vitality and depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO0OkzuSbTSSxdDO0ag33_tENqxMfHVuIKkafvNDApQnIoGdhUY8HaDCxU6w-QWYJKCOwmHMYnpK2zLgqosCEu4yJkBXrZBr5gszTQRqcxrdbm37MR2pYvCIy5q6knPKnnNBOD_jhXHK9Wgf9iJ0-dFlTC-UOEiyGdAh5khNUrnh4sCkFXVMR1iDu5T4DV7kcpppeENflRrIYIhMNB_KLwJU6BfA1N226iM1gGNR70GeLxP2MmBdXD69rjD_2wBe38Jbr-WeaZqQ"/>
+</div>
+<div class="flex items-center justify-between pt-md border-t border-white/5">
+<div class="flex gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-sm text-primary">342</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="text-sm">89</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</article>
+<!-- Feed Item 3 -->
+<article class="glass-card rounded-xl p-md transition-transform active:scale-[0.98]">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<img alt="User Avatar" class="w-12 h-12 rounded-xl object-cover border border-white/10" data-alt="A close-up shot of a man's face with a neutral expression, highlighted by high-contrast purple and blue lighting from the sides. The background is a matte black texture, giving the image a professional yet edgy social media vibe that aligns with the digital vitality branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB24VauUB80WnIDk--jSbh_vs5hLlvf1fUQmUu75EnYVBEX1O2mFMGBYZ8NqX-JOnKHx5PrUOQrox95AZqu0y9pXgAgBW7pA6rLovNM4vbm09YEi-W3RfGFW6992hfMRQYKJdG7dgBH7qIusM6Kv_cIZhBa7-9tEFlWOm8tMt-RrhTMww1-fsKmDVTTotymmRKweHhqgLzgT5zr5a2W852Uc0YnNuYO4cFxFN_L8Kqjk2G1kCj6QGQ-gUpizqHG02SBVwFoH-NGQ"/>
+<div>
+<h4 class="font-h3 text-body-lg font-bold">New Meetup in Tokyo? 🇯🇵</h4>
+<div class="flex items-center gap-xs text-on-surface-variant text-xs">
+<span class="font-bold text-secondary">@hiro_x</span>
+<span>•</span>
+<span>6h ago</span>
+</div>
+</div>
+</div>
+<span class="bg-secondary-container/10 text-secondary-container px-3 py-1 rounded-full text-xs font-label-caps">EVENTS</span>
+</div>
+<p class="text-on-surface-variant mb-md">
+                    Who's around Shibuya next Thursday? Thinking of hosting a small gathering for the Spark local community. Drinks and tech talk. Let me know below!
+                </p>
+<div class="flex items-center justify-between pt-md border-t border-white/5">
+<div class="flex gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+<span class="text-sm">56</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="text-sm">12</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 hyper-flow rounded-full shadow-[0_0_20px_rgba(200,99,251,0.5)] flex items-center justify-center text-white z-50 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 32px;">add</span>
+</button>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-background/80 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(200,99,251,0.1)] flex justify-around items-center px-base pb-6 pt-2">
+<div class="flex flex-col items-center justify-center text-primary-container bg-primary/10 rounded-xl px-3 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dynamic_feed</span>
+<span class="font-label-caps text-label-caps">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">event</span>
+<span class="font-label-caps text-label-caps">Events</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-caps text-label-caps">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps">Members</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">local_library</span>
+<span class="font-label-caps text-label-caps">Library</span>
+</div>
+</nav>
+</body></html>

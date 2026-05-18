@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#c863fb",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffb2b7",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-container": "#002957",
+                    "on-secondary-fixed": "#001b3e",
+                    "surface-tint": "#e9b3ff",
+                    "primary-fixed-dim": "#e9b3ff",
+                    "tertiary-fixed-dim": "#ffb2b7",
+                    "on-primary": "#510074",
+                    "primary-fixed": "#f6d9ff",
+                    "on-tertiary-fixed": "#40000e",
+                    "secondary-container": "#3e90ff",
+                    "primary": "#e9b3ff",
+                    "background": "#131313",
+                    "secondary-fixed": "#d6e3ff",
+                    "on-tertiary-container": "#5b0017",
+                    "surface-bright": "#393939",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-container": "#ff506c",
+                    "on-tertiary": "#67001c",
+                    "on-surface-variant": "#d2c1d4",
+                    "on-secondary-fixed-variant": "#00468d",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#aac7ff",
+                    "inverse-primary": "#9026c3",
+                    "secondary": "#aac7ff",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#9b8c9e",
+                    "surface-container": "#201f1f",
+                    "inverse-on-surface": "#313030",
+                    "surface": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "on-surface": "#e5e2e1",
+                    "on-secondary": "#003064",
+                    "on-primary-fixed": "#310048",
+                    "surface-dim": "#131313",
+                    "on-primary-fixed-variant": "#7200a3",
+                    "on-tertiary-fixed-variant": "#91002b",
+                    "surface-container-highest": "#353534",
+                    "tertiary-fixed": "#ffdadb",
+                    "surface-variant": "#353534",
+                    "on-primary-container": "#460066",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline-variant": "#4f4352",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "gutter": "20px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "label-caps": ["Space Grotesk"],
+                    "h3": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hyper-flow-gradient {
+            background: linear-gradient(135deg, #c863fb 0%, #3e90ff 100%);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 15px rgba(62, 144, 255, 0.4);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(200, 99, 251, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_20px_rgba(200,99,251,0.15)] flex justify-between items-center px-md h-16">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young creative professional with warm studio lighting against a dark minimalist background. The style is high-end and polished, mirroring a premium social network aesthetic with soft purple color grading and sharp focus on the facial features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrA1wL9-T1VU0OHiwoaFxUGoUJ9tUM3kn3PGw32irp-7bf3nk_T3wbgedzsrPS-PQNArghEpbmZ6eY9hJRdl7mxxdQZNNPSQJt9ve7Cpv_jssurevA5IDiSkQ_JI8A1p6Rx2nsM43zxI9WbTpkB7z99-nWxJ-IYHP_GIIXzwR9NhUnDAKxSLy3ctwY--cfo34G4CXORrlQIXDB5xmN9-tTJYKBVJzjnsTyMnXZb9m7ojkVcSZNh37zF8NlhM_oH9uNTOI1cm0FWQ"/>
+</div>
+<h1 class="font-h2 text-h2 tracking-tighter text-primary-container uppercase">SPARK SOCIAL</h1>
+</div>
+<button class="material-symbols-outlined text-primary text-h3 active:scale-95 transition-transform hover:opacity-80">notifications</button>
+</header>
+<main class="pt-24 px-md max-w-container-max mx-auto space-y-lg">
+<!-- Search & Filter Bar -->
+<section class="flex flex-col md:flex-row gap-base items-center">
+<div class="relative w-full md:w-2/3">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-black border border-outline-variant rounded-xl py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-secondary-container transition-all text-body-md" placeholder="Search the community..." type="text"/>
+</div>
+<div class="flex gap-base w-full md:w-auto">
+<button class="glass-card flex items-center gap-xs px-md py-3 rounded-xl flex-1 md:flex-none text-label-caps uppercase hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-base">tune</span> Filter
+                </button>
+<button class="glass-card flex items-center gap-xs px-md py-3 rounded-xl flex-1 md:flex-none text-label-caps uppercase hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-base">sort</span> Sort
+                </button>
+</div>
+</section>
+<!-- Member of the Month (Bento Hero) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-12 glass-card rounded-2xl overflow-hidden flex flex-col md:flex-row relative neon-glow-primary">
+<div class="md:w-1/3 h-64 md:h-auto relative">
+<img class="w-full h-full object-cover" data-alt="A cinematic portrait of a visionary community leader in a dark urban environment. The lighting is dominated by neon cyan and hot pink streaks that reflect off a sleek glass surface in the foreground. The mood is high-energy, electric, and sophisticated, representing digital vitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFGs1PE9AK6uJHTQ_9nLjwzMFW6uyl5wN3ne-EZJN1l0D0YX4UeFvVyoUxoztOd9Cm9hp8m69gqRh-WDqLK6XRU7TZulQi4OIvBpGa4ojbHhy8wUVe3J_NOwWwZZHsnxejD1QU1qsIq3jv3B5qoJz8PK0n_Shybb4TG9nmLONSgVjSLoU3ncjXPCNdvEIJcTox0PYq80ROeHlRM9TFFgPghcH44zd41aPh_H68ALnF2QtbNC8f97gq-3Ha7Lph0qca_FdWG04LKg"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container font-label-caps px-4 py-2 rounded-full flex items-center gap-xs shadow-lg">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span> Champion
+                    </div>
+</div>
+<div class="p-md md:w-2/3 flex flex-col justify-center space-y-md bg-gradient-to-br from-primary/10 to-transparent">
+<div>
+<span class="text-primary font-label-caps uppercase tracking-widest">Featured Member</span>
+<h2 class="font-h1 text-h1 mt-xs">Marcus Volt</h2>
+<p class="text-on-surface-variant text-body-lg max-w-xl">Curating the most vibrant digital art collections and connecting pioneers across the spark ecosystem.</p>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full font-label-caps">LEADERSHIP</span>
+<span class="bg-secondary/20 text-secondary border border-secondary/30 px-3 py-1 rounded-full font-label-caps">CREATIVE DIRECTOR</span>
+<span class="bg-white/5 text-on-surface px-3 py-1 rounded-full font-label-caps">FOUNDING MEMBER</span>
+</div>
+<div class="flex gap-base pt-sm">
+<button class="hyper-flow-gradient text-on-primary-container px-xl py-3 rounded-xl font-label-caps uppercase hover:opacity-90 transition-opacity">Message Marcus</button>
+<button class="glass-card border-secondary-container/50 text-secondary px-lg py-3 rounded-xl font-label-caps uppercase hover:bg-secondary/10 transition-colors">View Portfolio</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Directory -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Member Card 1 -->
+<div class="glass-card rounded-2xl p-md flex flex-col justify-between space-y-md group hover:border-primary/50 transition-all">
+<div class="space-y-sm">
+<div class="w-16 h-16 rounded-2xl overflow-hidden border border-white/10 group-hover:neon-glow-cyan transition-all">
+<img class="w-full h-full object-cover" data-alt="Close up profile of a stylish female technologist with purple tinted glasses. The scene is illuminated by glowing digital interfaces reflecting on her face. The aesthetic is dark, matte, and futuristic with electric neon accents and high-end depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgkNWfpP-7a_3npM-C3jhGZ5wqYaFQeAUxI6yTeDOEsIJMgGlkno33es1D4E-k70IpaKAkd8tvG0gJODuDS3szfOhCr1ZE16gceVjjJMxAG3GxdsHhZc2jTChxE2gJ1hSj81Xoi2gNIGPcs3thOw111IGkbPrtZu-2WwLqPMd7A0k-_iiVAlH799u8fd2kyV5l58K4xaXSm_ydiKqPl_qhuYXWBVe_bDT501GR0OOojNf0NkivK2cOUA_hjkufPMlb_BrCPprMrQ"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3">Elena Ray</h3>
+<p class="text-on-surface-variant font-label-caps text-xs">@elenaray_spark</p>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-secondary/20 text-secondary text-[10px] px-2 py-0.5 rounded-full font-label-caps">EXPERT</span>
+<span class="bg-white/5 text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-label-caps">DEVELOPER</span>
+</div>
+</div>
+<button class="w-full py-2 border border-white/10 rounded-lg font-label-caps uppercase text-xs hover:bg-white/5 active:scale-95 transition-all">Message</button>
+</div>
+<!-- Member Card 2 -->
+<div class="glass-card rounded-2xl p-md flex flex-col justify-between space-y-md group hover:border-primary/50 transition-all">
+<div class="space-y-sm">
+<div class="w-16 h-16 rounded-2xl overflow-hidden border border-white/10 group-hover:neon-glow-cyan transition-all">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male creative coder with a minimalist industrial background. The lighting is high-contrast with a dominant magenta glow on one side. The overall visual style is matte black and glassmorphic, emphasizing a modern underground tech culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnL-WZwpQfdP2AMMeomF9OEDsqlniHbl8ek16Bxl9vzF8px5hPKgiyyOYhat4f-TWpzPJikpt8RAyhG5wsXoWnVPYCfA7SE2GWUqopaPRPzkHh31E_EAWwxWG1AtqBMUwbPgb0gRpcjwpk42okaVdh9Yll7Sn3q680W07K4XbJQjpC3aljC3qm9mwWhxCbWIKnmO2uBtjpzItYAzVrVB6tXdW-F5wKWY4AeaRtXxCvMCj48ckIISjAvTBL92RpfFLQzxdYKCn5gw"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3">Kaito Chen</h3>
+<p class="text-on-surface-variant font-label-caps text-xs">@kaito_motion</p>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded-full font-label-caps">NEWCOMER</span>
+<span class="bg-white/5 text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-label-caps">MOTION DESIGN</span>
+</div>
+</div>
+<button class="w-full py-2 border border-white/10 rounded-lg font-label-caps uppercase text-xs hover:bg-white/5 active:scale-95 transition-all">Message</button>
+</div>
+<!-- Member Card 3 -->
+<div class="glass-card rounded-2xl p-md flex flex-col justify-between space-y-md group hover:border-primary/50 transition-all">
+<div class="space-y-sm">
+<div class="w-16 h-16 rounded-2xl overflow-hidden border border-white/10 group-hover:neon-glow-cyan transition-all">
+<img class="w-full h-full object-cover" data-alt="Artistic portrait of a digital architect in a dark room filled with floating holographic blueprints. The color palette features deep blacks and vibrant neon cyan light leaks. The style is sophisticated and futuristic, aligning with a premium bento-box UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB4ILMHB10KUM9qJbanEEmFGMaa2F0lH9o4qTJ7EnjLuzqZeuVIevt3ZzEgncOM0jGgJaxjClTI-rIHYnkpaBn2odZ0FsEK6qaS2byg03AjYlgNLOCIBhGpTr6IUAF37J4kgVDD1NrvFhqYhLEkZUtzafVRXNdMKtcNi7Gpodm577v0FZSUQLo1POWaKQx8tzpKDoEa-4HX4vceCSfgPwVNINeV7Wxjxz8wbHfLHgq-J9LnBgY_62uGckBx-0QbbPi1kdiLS8uZQ"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3">Sarah Zen</h3>
+<p class="text-on-surface-variant font-label-caps text-xs">@sarahzen_arch</p>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-tertiary-container/20 text-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-label-caps">VIP</span>
+<span class="bg-white/5 text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-label-caps">ARCHITECT</span>
+</div>
+</div>
+<button class="w-full py-2 border border-white/10 rounded-lg font-label-caps uppercase text-xs hover:bg-white/5 active:scale-95 transition-all">Message</button>
+</div>
+<!-- Member Card 4 -->
+<div class="glass-card rounded-2xl p-md flex flex-col justify-between space-y-md group hover:border-primary/50 transition-all">
+<div class="space-y-sm">
+<div class="w-16 h-16 rounded-2xl overflow-hidden border border-white/10 group-hover:neon-glow-cyan transition-all">
+<img class="w-full h-full object-cover" data-alt="Close up studio portrait of a woman in minimalist clothing with soft neon lighting. The background is a textured dark grey matte wall. The mood is calm yet energized, perfectly capturing the digital vitality theme with high-end photographic quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgC5bsyd0lP86TdUhrVNNX1KxAM9gD0OjGcFeqiF8j4J2how1AIVfvVf7iP4mms7pUZFgsyQd9UniDSDan9yezJP-b0T55CAXZYW0cV9xmp2TfA20tYHDBt2KTcnip1tv0oNjc620HxKF6f-66gcQTFDwECchGJQzj4GRSaI-8hyWWrCSz_hN7GtWExurxeaDKM0rDHibouihPh1ll2PNw4oTmzj73EhWhzKbsHaxx5ueOZZrTWw7NxV781KFKGylW_eiYm_acIQ"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3">Lila Thorne</h3>
+<p class="text-on-surface-variant font-label-caps text-xs">@lila_t</p>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-secondary/20 text-secondary text-[10px] px-2 py-0.5 rounded-full font-label-caps">EXPERT</span>
+<span class="bg-white/5 text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-label-caps">COMMUNITY</span>
+</div>
+</div>
+<button class="w-full py-2 border border-white/10 rounded-lg font-label-caps uppercase text-xs hover:bg-white/5 active:scale-95 transition-all">Message</button>
+</div>
+<!-- Member Card 5 (Repeated Layout for Density) -->
+<div class="glass-card rounded-2xl p-md flex flex-col justify-between space-y-md group hover:border-primary/50 transition-all">
+<div class="space-y-sm">
+<div class="w-16 h-16 rounded-2xl overflow-hidden border border-white/10 group-hover:neon-glow-cyan transition-all">
+<img class="w-full h-full object-cover" data-alt="A candid high-fashion portrait of a member in a dark techwear outfit. The scene is lit with soft purple and blue ambient light. The style is edgy and premium, using glassmorphic depth effects and a matte finish for a sophisticated social ecosystem look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKf6Kvu22cq4QebO0NBitv1zHDzuDpRnaKe1OERQrAib564SyecbG-AELtlYtHv9XH6TaId2TSpQaCzI6NOwSdWffvCXDv1aeW2duOLn3qvikXpGJQ-t_Ixd2nl3p6vhokJfFiUpMScRQdsANaj0iR-d8lpsuMbsGy-ZWDEEcB3r3EUDNW6TCurZWVA6z_7918lOvI02n7czAw3sX-W6dqKZEJ6osTVX1Uw3L-ZqF-DiY4STAfsywwka-NQIIMOHly9MnjxH5eZg"/>
+</div>
+<div>
+<h3 class="font-h3 text-h3">Julian X</h3>
+<p class="text-on-surface-variant font-label-caps text-xs">@julianx_core</p>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-white/5 text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-label-caps">STRATEGY</span>
+</div>
+</div>
+<button class="w-full py-2 border border-white/10 rounded-lg font-label-caps uppercase text-xs hover:bg-white/5 active:scale-95 transition-all">Message</button>
+</div>
+<!-- Stats Bento 1x1 -->
+<div class="glass-card rounded-2xl p-md flex flex-col justify-center items-center text-center space-y-xs group hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-primary text-h1">group</span>
+<div class="font-h2 text-h2">1,248</div>
+<div class="font-label-caps text-on-surface-variant uppercase text-xs">Total Members</div>
+</div>
+<!-- Stats Bento 1x1 -->
+<div class="glass-card rounded-2xl p-md flex flex-col justify-center items-center text-center space-y-xs group hover:bg-secondary/5 transition-all">
+<span class="material-symbols-outlined text-secondary text-h1">bolt</span>
+<div class="font-h2 text-h2">342</div>
+<div class="font-label-caps text-on-surface-variant uppercase text-xs">Active Now</div>
+</div>
+<!-- Call to Action Bento 1x1 -->
+<div class="hyper-flow-gradient rounded-2xl p-md flex flex-col justify-center items-center text-center space-y-sm neon-glow-primary group cursor-pointer active:scale-95 transition-all">
+<h3 class="font-label-caps text-on-primary-container text-sm">BECOME A CHAMPION</h3>
+<span class="material-symbols-outlined text-on-primary-container text-h2">workspace_premium</span>
+<p class="text-[10px] text-on-primary-container/80 uppercase font-bold">Apply Now</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-base pb-6 pt-2 bg-background/80 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(200,99,251,0.1)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-container bg-primary/10 rounded-xl px-3 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Members</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">local_library</span>
+<span class="font-label-caps text-label-caps mt-1 uppercase">Library</span>
+</a>
+</nav>
+</body></html>

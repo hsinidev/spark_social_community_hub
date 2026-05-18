@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#c863fb",
+            "error": "#ffb4ab",
+            "tertiary": "#ffb2b7",
+            "on-background": "#e5e2e1",
+            "on-secondary-container": "#002957",
+            "on-secondary-fixed": "#001b3e",
+            "surface-tint": "#e9b3ff",
+            "primary-fixed-dim": "#e9b3ff",
+            "tertiary-fixed-dim": "#ffb2b7",
+            "on-primary": "#510074",
+            "primary-fixed": "#f6d9ff",
+            "on-tertiary-fixed": "#40000e",
+            "secondary-container": "#3e90ff",
+            "primary": "#e9b3ff",
+            "background": "#131313",
+            "secondary-fixed": "#d6e3ff",
+            "on-tertiary-container": "#5b0017",
+            "surface-bright": "#393939",
+            "surface-container-low": "#1c1b1b",
+            "surface-container-high": "#2a2a2a",
+            "tertiary-container": "#ff506c",
+            "on-tertiary": "#67001c",
+            "on-surface-variant": "#d2c1d4",
+            "on-secondary-fixed-variant": "#00468d",
+            "error-container": "#93000a",
+            "secondary-fixed-dim": "#aac7ff",
+            "inverse-primary": "#9026c3",
+            "secondary": "#aac7ff",
+            "on-error-container": "#ffdad6",
+            "outline": "#9b8c9e",
+            "surface-container": "#201f1f",
+            "inverse-on-surface": "#313030",
+            "surface": "#131313",
+            "inverse-surface": "#e5e2e1",
+            "on-surface": "#e5e2e1",
+            "on-secondary": "#003064",
+            "on-primary-fixed": "#310048",
+            "surface-dim": "#131313",
+            "on-primary-fixed-variant": "#7200a3",
+            "on-tertiary-fixed-variant": "#91002b",
+            "surface-container-highest": "#353534",
+            "tertiary-fixed": "#ffdadb",
+            "surface-variant": "#353534",
+            "on-primary-container": "#460066",
+            "surface-container-lowest": "#0e0e0e",
+            "outline-variant": "#4f4352",
+            "on-error": "#690005"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "base": "8px",
+            "container-max": "1280px",
+            "sm": "12px",
+            "md": "24px",
+            "lg": "40px",
+            "xl": "64px",
+            "gutter": "20px",
+            "xs": "4px"
+          },
+          "fontFamily": {
+            "h2": ["Inter"],
+            "label-caps": ["Space Grotesk"],
+            "h3": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "h1": ["Inter"]
+          },
+          "fontSize": {
+            "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+            "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .hyper-flow-gradient {
+      background: linear-gradient(135deg, #c863fb 0%, #3e90ff 100%);
+    }
+    .neon-border {
+      box-shadow: 0 0 15px rgba(170, 199, 255, 0.3);
+    }
+    body {
+      background-color: #131313;
+      color: #e5e2e1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen font-body-md">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_20px_rgba(200,99,251,0.15)] flex justify-between items-center px-md h-16 w-full">
+<div class="flex items-center gap-base">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/30">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young creative professional with warm lighting and a soft focus background. The person has a friendly expression, set against a dark, minimalist studio background that echoes the matte black aesthetic of the platform. The lighting highlights subtle textures and deep purple undertones in the shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMl_o7aZ_0r_uD2icEjH77rj_gQ9Al3hW30eC3hTdKuHqWYnejtdQP5-LzXi999TEa4lW5E9W5URCzD7lPyB9MqP6AWnylSLV0UKBr7z54FEXt5_r3zquWhZqwz0oObg9Hwgx-dap_QAV5Kchp-yeNqG_z5LA3eDYWbylnCRqbR3-nuNcPPHKFo6F1NmlsA7e_rvA9Og8OBu4FvRoOiH-jPYfOypJ_EdLEBjmp9rTBC87dbWNZDb67nlIf_iamV-3K9HCyD0wGEQ"/>
+</div>
+<span class="font-h2 text-h2 tracking-tighter text-primary-container">SPARK SOCIAL</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95">notifications</button>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-md max-w-container-max mx-auto">
+<header class="mb-lg">
+<h1 class="font-h1 text-h1 text-on-background mb-base">Explore Events</h1>
+<p class="text-on-surface-variant font-body-lg max-w-2xl">Connect with the pulse of the community through high-energy workshops and exclusive meetups.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 glass-card rounded-xl overflow-hidden flex flex-col justify-between p-md relative min-h-[320px]">
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A wide-angle shot of a high-tech virtual event stage with glowing neon pink and cyan lights. Holographic screens display data visualizations while a crowd of digital avatars watches. The atmosphere is electric and cinematic, with deep matte blacks and sharp light leaks cutting through a hazy, futuristic arena environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcy-69GlBTDex-58wCJHxe6WsL1-koq9klsxwnfBoSsVU14f2sheWSsnqOvf2G_dlnJcjKTPLZoG1MK1F0EAU0tsSL6eMq1i6gy_7KOatadnvpccCscdl9D57gtqLEY_e4K-pZDk4dAtmZduOw6TuRZ0zsM8DPkoh4LFqGJfuX7NOrtFaORXHeFh78uqlr8HuWU-2hDh5Dyqn50EWARz3sFtddKFUnDFXFTYlLmRZfGjn8zQRdwvG30tAX52ugtBeCAkDQnIaa1A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-sm mb-base">
+<span class="bg-tertiary-container text-on-tertiary-container px-sm py-1 rounded-full text-label-caps font-label-caps flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> LIVE NOW
+            </span>
+<span class="bg-primary/20 text-primary border border-primary/30 px-sm py-1 rounded-full text-label-caps font-label-caps">VIRTUAL</span>
+</div>
+<h2 class="font-h2 text-h2 text-white mb-xs">Next-Gen UI Architectures</h2>
+<p class="text-on-surface-variant max-w-lg">Join 1.2k others in this deep dive into bento grids and neon aesthetics.</p>
+</div>
+<div class="relative z-10 flex justify-end">
+<button class="hyper-flow-gradient text-white font-label-caps text-label-caps px-xl py-md rounded-xl hover:opacity-90 transition-all active:scale-95 shadow-[0_0_20px_rgba(200,99,251,0.4)]">JOIN STREAM</button>
+</div>
+</div>
+<div class="md:col-span-4 glass-card rounded-xl p-md flex flex-col justify-between">
+<div>
+<span class="text-secondary font-label-caps text-label-caps mb-sm block">UPCOMING MEETUP</span>
+<h3 class="font-h3 text-h3 text-white mb-base">Street Photography IRL</h3>
+<div class="flex items-center gap-base text-on-surface-variant mb-md">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="font-body-md">Oct 24 • 18:00</span>
+</div>
+<div class="flex items-center gap-base text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-body-md">Shibuya Crossing, Tokyo</span>
+</div>
+</div>
+<button class="w-full mt-lg border border-secondary text-secondary font-label-caps text-label-caps py-md rounded-xl hover:bg-secondary/10 transition-colors active:scale-95 neon-border">RSVP NOW</button>
+</div>
+<div class="md:col-span-4 glass-card rounded-xl p-md relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary text-h3">architecture</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">Workshops</h3>
+<p class="text-on-surface-variant text-body-md">Hands-on sessions with industry leads.</p>
+</div>
+<div class="flex justify-between items-end mt-xl">
+<span class="text-primary font-h2">12</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 glass-card rounded-xl p-md relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-secondary text-h3">diversity_3</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">Meetups</h3>
+<p class="text-on-surface-variant text-body-md">Casual gatherings for local chapters.</p>
+</div>
+<div class="flex justify-between items-end mt-xl">
+<span class="text-secondary font-h2">45</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 glass-card rounded-xl p-md relative group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-tertiary/20 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-tertiary text-h3">rocket_launch</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">Launchpad</h3>
+<p class="text-on-surface-variant text-body-md">Exclusive product drops and reveals.</p>
+</div>
+<div class="flex justify-between items-end mt-xl">
+<span class="text-tertiary font-h2">08</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-12 glass-card rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+<div class="p-md flex flex-col justify-center">
+<div class="flex items-center gap-xs text-primary mb-sm">
+<span class="material-symbols-outlined text-body-md">auto_awesome</span>
+<span class="font-label-caps text-label-caps">FEATURED SERIES</span>
+</div>
+<h2 class="font-h2 text-h2 mb-base">The Sound of Connection</h2>
+<p class="text-on-surface-variant text-body-lg mb-lg">A monthly virtual residency featuring underground electronic artists and live generative visuals.</p>
+<div class="flex gap-md">
+<button class="bg-white text-background font-label-caps text-label-caps px-lg py-md rounded-xl hover:opacity-90 active:scale-95 transition-all">VIEW SERIES</button>
+<button class="text-white border border-white/20 font-label-caps text-label-caps px-lg py-md rounded-xl hover:bg-white/5 active:scale-95 transition-all">RECRUITMENT</button>
+</div>
+</div>
+<div class="h-64 md:h-full relative">
+<img class="w-full h-full object-cover" data-alt="A cinematic close-up of a DJ performing at a high-energy event. The lighting is dominated by deep magentas and neon purples, with blurred bokeh light orbs in the background. The mood is underground and electric, emphasizing a vibrant social connection through music and digital art in a sleek matte black environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwrvenqMou7np7ZYquKNFX5W6qW6lcmy6X4vxaMN16k6LDk5qXg7USDe2hu7-exJrLKDE1CoDu2TENx3kS9DKyvMAF9lB9wJrp4QpYLXqWYe4lHgFLYQtSRJhaLrnvUsLT9ajhhwwCDoJJjbicR-ciW7DCXBaIH0JSa4ziH2Z7T-AJ2DUSxR9oohV4hY2EiFvrNwr1pcXqgmgL4_2m-MOHuPGshZTwOKOXEZQgI6mQj7FP6J17lP-pZQQWJdRHiO9-AE7Aue8_TA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent hidden md:block"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent md:hidden"></div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-background/80 backdrop-blur-xl border-t border-white/10 shadow-[0_-4px_20px_rgba(200,99,251,0.1)] flex justify-around items-center px-base pb-6 pt-2">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-caps text-label-caps">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary-container bg-primary/10 rounded-xl px-3 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">event</span>
+<span class="font-label-caps text-label-caps">Events</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-caps text-label-caps">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps">Members</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined">local_library</span>
+<span class="font-label-caps text-label-caps">Library</span>
+</div>
+</footer>
+</body></html>
